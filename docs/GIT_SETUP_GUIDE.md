@@ -54,7 +54,7 @@ membership can require 2FA, and access is managed per-member. Cost is the same (
 
 ## 5. Branch setup on GitHub (do this AFTER the first push in §6, then come back here)
 
-1. Repo → *Settings → General → Default branch* → set to **`working`** (so fresh clones and new PRs default to the everyday branch).
+1. Repo → *Settings → General → Default branch* → click the pencil → set to **`staging`** (team decision: fresh clones and new PRs default to `staging`, the shared everyday branch).
 2. If on **GitHub Team** (Option B): *Settings → Branches → Add branch protection rule*:
    - Pattern `main`: ✅ Require a pull request before merging (1 approval) · ✅ Block force pushes · ✅ Restrict deletions.
    - Pattern `staging`: ✅ Block force pushes only — no PR requirement, because staging deliberately accepts direct bug-fix pushes during testing (§7).
@@ -88,8 +88,8 @@ git config --global user.name "Your Name"
 git config --global user.email "you@aphenic.com"
 
 git clone https://github.com/<org>/seektrix.git
-cd seektrix
-git switch working          # daily work happens here
+cd seektrix                              # you land on 'staging' automatically (default branch)
+git switch -c feature/<yourname>-<task>  # branch off staging for your work (or: git switch working)
 npm install
 cp .env.example .env        # then paste the Supabase keys (shared privately — NOT via Git!)
 npm run dev
@@ -98,6 +98,11 @@ npm run dev
 ---
 
 ## 7. The workflow: `working → staging → main`
+
+> **Team decision (2026-07-21): the default branch is `staging`.** Two equally valid ways
+> to develop — pick per task: (a) work on the shared `working` branch exactly as described
+> below, or (b) create a short-lived `feature/<name>` branch off `staging` and open a PR
+> from it into `staging`. Both end the same way: test on `staging`, then PR `staging → main`.
 
 ```
    working   ← everyone codes here, every day
