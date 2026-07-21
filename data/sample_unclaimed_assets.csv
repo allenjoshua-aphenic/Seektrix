@@ -1,0 +1,5 @@
+holder_name,father_name,company_name,folio_number,state,full_address,shares
+Suresh Menon,K. P. Menon,MRF Ltd.,MRF-IEPF-10021,Tamil Nadu,"14 Cathedral Road, Chennai",120
+Lakshmi Iyer,,MRF Ltd.,MRF-IEPF-10022,Tamil Nadu,"3 T Nagar, Chennai",45
+Arun Prakash,V. Prakash,MRF Ltd.,MRF-IEPF-10023,Kerala,"9 MG Road, Kochi","1,250"
+,Missing Holder,MRF Ltd.,MRF-IEPF-10024,Kerala,,10

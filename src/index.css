@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, Cambria, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-night-sky: #1f1f29;
+  --color-cofounder-blue: #0081c0;
+  --color-action-azure: #41a1cf;
+  --color-canvas-white: #ffffff;
+  --color-off-white: #fefffc;
+  --color-ash-gray: #f9faf7;
+  --color-steel-gray: #dee2de;
+  --color-dark-charcoal: #171717;
+  --color-charcoal: #2c2c2c;
+  --color-slate-gray: #444141;
+  --color-medium-gray: #646464;
+}
+
+/* Custom styles for an institutional, sophisticated print-worthy theme */
+.font-serif-intellectual {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+}
+
+/* Smooth custom glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(28px) saturate(130%);
+  -webkit-backdrop-filter: blur(28px) saturate(130%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01), 
+              0 15px 35px -5px rgba(31, 38, 135, 0.06), 
+              inset 0 1px 1px 0px rgba(255, 255, 255, 0.75);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.52);
+  backdrop-filter: blur(32px) saturate(140%);
+  -webkit-backdrop-filter: blur(32px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04), 
+              0 20px 60px -10px rgba(0, 0, 0, 0.07), 
+              inset 0 1px 1.5px 0px rgba(255, 255, 255, 0.85);
+}
+
+.navbar-glass {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03), 
+              0 25px 60px -15px rgba(0, 0, 0, 0.06), 
+              inset 0 1px 1px 0px rgba(255, 255, 255, 0.9);
+}
+
+.glass-panel-dark {
+  background: rgba(18, 18, 26, 0.65);
+  backdrop-filter: blur(32px) saturate(120%);
+  -webkit-backdrop-filter: blur(32px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.22), 
+              0 25px 70px -12px rgba(0, 0, 0, 0.35), 
+              inset 0 1px 1px 0px rgba(255, 255, 255, 0.18);
+}
+
+/* Floating nested glass elements */
+.glass-sub-floating {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 
+              0 12px 30px -4px rgba(0, 0, 0, 0.05), 
+              inset 0 1px 0.5px 0px rgba(255, 255, 255, 0.9);
+}
+
+.glass-sub-floating:hover {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03), 
+              0 16px 40px -4px rgba(0, 0, 0, 0.08), 
+              inset 0 1px 0.5px 0px rgba(255, 255, 255, 0.95);
+}
+
+.serif-display {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #1f1f29, #0081c0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.status-dot {
+  width: 6.5px;
+  height: 6.5px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.ai-pipeline-visual {
+  background: radial-gradient(circle at center, rgba(0, 129, 192, 0.05) 0%, transparent 70%);
+}
+
+/* Print/Report layout aesthetics */
+.report-page {
+  font-family: var(--font-sans);
+  background-color: #fefffc;
+  color: #171717;
+}
+
+/* Ambient keyframes */
+@keyframes slowGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-slow-glow {
+  background: radial-gradient(circle, rgba(0,129,192,0.15) 0%, rgba(31,31,41,0) 70%);
+  filter: blur(40px);
+}
+
+/* @media print layouts */
+@media print {
+  /* Hide unrelated interface components */
+  header,
+  nav,
+  footer,
+  .no-print,
+  #report-print-btn,
+  #report-download-btn,
+  button {
+    display: none !important;
+  }
+
+  /* Reset global layout backgrounds, borders and shadows */
+  body, html, #root {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #171717 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Ensure the report container spans full-width without desktop containers */
+  #report-paper-container, .report-page, .glass-panel-light {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 30px !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #171717 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Force print colored tags and background tints in browser */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+/* Custom laser scanning animations */
+@keyframes scan {
+  0% { top: 8%; opacity: 0.2; }
+  25% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { top: 90%; opacity: 0.2; }
+}
+
+

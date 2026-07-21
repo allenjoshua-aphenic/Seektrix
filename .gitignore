@@ -1,0 +1,24 @@
+# Dependencies & build outputs
+node_modules/
+build/
+dist/
+coverage/
+
+# Environment & secrets — NEVER commit real keys
+.env*
+!.env.example
+
+# Ingested shareholder data (PII) — lives in Supabase, not in Git
+data/ingested/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.log
+
+# AI Studio leftovers
+assets/.aistudio/

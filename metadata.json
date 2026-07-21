@@ -1,0 +1,6 @@
+{
+  "name": "SEEKTRIX",
+  "description": "AI-powered unclaimed financial asset discovery platform for India. Scan public financial disclosures, IEPF records, and dividend tracking databases recursively with advanced document intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
