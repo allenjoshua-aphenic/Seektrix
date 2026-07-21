@@ -1,3 +1,4 @@
+// hi this is the client side api for the search pipeline. It connects to the local express/fastapi backend server and handles the search submission and status polling.
 import { SearchQuery, UnclaimedAsset, PipelineStep, PipelineLog } from '../types';
 
 const API_BASE_URL = (import.meta as any).env?.VITE_API_URL || '';
