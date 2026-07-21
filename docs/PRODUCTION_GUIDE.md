@@ -269,6 +269,6 @@ What *does* remain, fully catalogued:
 ## 8. Security Notes
 
 - 🔴 **Rotate the Supabase Personal Access Token** you shared this session (`sbp_403...`): Dashboard → Account → Access Tokens → revoke it and create a new one. It grants full management access to your projects and was pasted in a chat — treat it as exposed.
-- `.env` is correctly gitignored (`.gitignore` line 7). The folder isn't a git repo yet; when you `git init`, the protection is already in place. Never commit real keys.
+- `.env` is correctly gitignored, and the repo is now under Git — `git ls-files` confirms no secrets or PII CSVs are tracked. Never commit real keys.
 - Keep the **service_role key server-side only** (it's read via `SUPABASE_SERVICE_ROLE_KEY`, which Vite does *not* bundle into the browser — never rename it with a `VITE_` prefix).
 - Keep **RLS enabled with no policies** on `unclaimed_assets` — combined with the `SECURITY DEFINER` search function, that's what stops bulk scraping of your shareholder data.

@@ -52,13 +52,13 @@ membership can require 2FA, and access is managed per-member. Cost is the same (
    - **Write** = clone, pull, push, create branches, open PRs — everything they need.
    - Do **not** give Admin (that can change settings/delete the repo). Only the owner keeps Admin.
 
-## 5. Branch setup on GitHub (after the first push)
+## 5. Branch setup on GitHub (do this AFTER the first push in §6, then come back here)
 
 1. Repo → *Settings → General → Default branch* → set to **`working`** (so fresh clones and new PRs default to the everyday branch).
 2. If on **GitHub Team** (Option B): *Settings → Branches → Add branch protection rule*:
    - Pattern `main`: ✅ Require a pull request before merging (1 approval) · ✅ Block force pushes · ✅ Restrict deletions.
-   - Pattern `staging`: ✅ Require a pull request before merging · ✅ Block force pushes.
-3. If on **Free** (Option A): write the rule in your team chat instead — *"nobody ever runs `git push` while on `main` or `staging`; those branches only change through PRs on GitHub"* — and stick to it.
+   - Pattern `staging`: ✅ Block force pushes only — no PR requirement, because staging deliberately accepts direct bug-fix pushes during testing (§7).
+3. If on **Free** (Option A): write the rule in your team chat instead — *"nobody ever pushes directly to `main` — it changes only through PRs on GitHub. `staging` changes through PRs from `working`, plus direct bug-fix commits while testing."* — and stick to it.
 
 ---
 
@@ -83,11 +83,15 @@ ships with Git for Windows — approve it once and it remembers).
 
 **Teammates then get the code with:**
 ```bash
+# one-time on a fresh machine: tell Git who you are (this appears in commit history)
+git config --global user.name "Your Name"
+git config --global user.email "you@aphenic.com"
+
 git clone https://github.com/<org>/seektrix.git
 cd seektrix
 git switch working          # daily work happens here
 npm install
-copy .env.example .env      # then paste the Supabase keys (shared privately — NOT via Git!)
+cp .env.example .env        # then paste the Supabase keys (shared privately — NOT via Git!)
 npm run dev
 ```
 
@@ -141,6 +145,7 @@ git push
 ```
 
 Without the sync-back, `working` drifts behind and the next PR shows confusing old diffs.
+(If the sync-back `git push` is rejected because a teammate pushed meanwhile, use a plain `git pull` — **not** `--rebase` this one time, since a merge commit is involved — then push again.)
 
 ### Merge vs rebase — the simple rule
 - **Rebase** only your local unpushed commits: `git pull --rebase` on `working`. Never rebase `staging`/`main` or anything already pushed that others may have.
@@ -184,7 +189,7 @@ seektrix/
 └── .env                        # real keys — GIT-IGNORED, never committed
 ```
 
-**Committed:** everything above except the ignored items.
+**Committed:** everything above, plus the root housekeeping files (`README.md`, `.gitignore`, `.env.example`, `metadata.json`, `Seektrix.code-workspace`) — except the ignored items below.
 **Ignored (via `.gitignore`):** `node_modules/`, `dist/`/`build/`, `.env*` (except `.env.example`), `data/ingested/` (real people's PII must not enter Git history), `__pycache__/`, logs, OS junk.
 **Never commit, ever:** `.env`, any API key or token in any file, real shareholder CSVs, `dist/` builds.
 

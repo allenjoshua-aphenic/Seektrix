@@ -2,6 +2,14 @@
 
 > Generated 2026-07-19 by a full multi-agent analysis (every file in the repo was read end-to-end).
 > Project: unclaimed-shares discovery platform for India (IEPF-style shareholder search).
+>
+> ⚠ **2026-07-21 update — read before trusting paths below:** the repo has since been
+> restructured (SQL → `database/`, tooling scripts → `scripts/`, docs → `docs/`, CSVs →
+> `data/`), `bun.lock` was removed (npm is the package manager; `package-lock.json` is in
+> sync, so `npm install` and `npm ci` both work now), a `.env` exists, the mock-data
+> fallbacks described below were removed, and the folder is a Git repository. This report
+> is kept as the original audit snapshot; see [PRODUCTION_GUIDE.md](PRODUCTION_GUIDE.md)
+> for the current state.
 
 ---
 
@@ -12,7 +20,7 @@
 | Where is the **frontend**? | `src/` — a Vite + React 19 + TypeScript + Tailwind v4 single-page app. Entry: `index.html` → `src/main.tsx` → `src/App.tsx`. |
 | Where is the **backend**? | `server.ts` in the **project root**. One Express server (port 3000) that serves the frontend AND the `/api/*` endpoints, and talks to Supabase. There is **no Python/FastAPI/Celery backend** — those `.env` entries are dead leftovers. |
 | What do I install **globally**? | **Nothing.** All tools (`tsx`, `vite`, `esbuild`, `typescript`) are local devDependencies. You only need **Node.js 22 LTS** (or 18/20) installed on the machine. |
-| Install command | `npm install` (see §3 — do **not** use `npm ci`, the npm lockfile is stale). |
+| Install command | `npm install` (see §3). |
 | Run command | `npm run dev` → http://localhost:3000 |
 | Will adding data to Supabase **complete the project**? | **NO.** The pipe from Supabase → UI genuinely works, but there are **critical code gaps** (see §7). The biggest one: **when Supabase finds no match, the app silently FABRICATES fake shareholder records for whatever name was searched** — and then asks the user to pay ₹49/₹99 to unlock them. That must be removed before any real user touches this. Payments, auth, and email are also entirely simulated. |
 
@@ -39,11 +47,10 @@ cd "C:\Personal Projects\Seektrix"
 npm install
 ```
 
-**Important lockfile note:** the repo has BOTH `bun.lock` and `package-lock.json`.
-- `bun.lock` is **up to date** (the project was last built with Bun).
-- `package-lock.json` is **stale** (missing `pg` / `@types/pg`), so **`npm ci` will fail** — use plain `npm install`.
-- Alternative that reproduces the exact tested dependency tree: install Bun (`winget install Oven-sh.Bun`) then `bun install --frozen-lockfile`.
-- Pick one manager and delete the other lockfile to avoid future drift.
+**Lockfile note (updated 2026-07-21):** `bun.lock` has been deleted; npm is the sole
+package manager and `package-lock.json` is now in sync with `package.json` — both
+`npm install` and `npm ci` work. (The original audit found a stale npm lockfile
+alongside a Bun lockfile; that situation no longer exists.)
 
 ### Configure environment
 Create a `.env` file in the project root (**none exists right now — this is why the app currently never touches Supabase**):
@@ -98,7 +105,7 @@ $env:NODE_ENV = 'production'; npm start    # production run (NODE_ENV=production
 | `seed.sql` / `seed_supabase.js` / `insert.js` / `test_query.js` | Database setup/seed/test scripts (see §3). |
 | `.env.example` | Template — mostly dead vars (see above). |
 | `README.md`, `metadata.json` | AI Studio template leftovers. |
-| `bun.lock` + `package-lock.json` | Two lockfiles; bun.lock is the current one. |
+| `package-lock.json` | npm lockfile (bun.lock removed 2026-07-21; npm is the package manager). |
 | `.gitignore` | Correct (protects `.env`) — but the folder is **not a git repo yet**, so it does nothing until `git init`. |
 
 ### `src/` (frontend)

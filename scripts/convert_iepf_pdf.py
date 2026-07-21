@@ -11,11 +11,11 @@ Built for the common fixed-width layout:
 (numeric) and demat IDs (IN + 14 digits), and the PDF quirk where the
 share count is glued to the first letter of the address ("1B" = 1 share).
 
-Usage:
+Usage (from the repo root):
     pip install pypdf                      (one time)
-    python convert_iepf_pdf.py <list.pdf> <output.csv> --company "PNB Gilts Ltd."
-    python ingest_csv.py <output.csv> --dry-run
-    python ingest_csv.py <output.csv>
+    python scripts/convert_iepf_pdf.py <list.pdf> <output.csv> --company "PNB Gilts Ltd."
+    python scripts/ingest_csv.py <output.csv> --dry-run
+    python scripts/ingest_csv.py <output.csv>
 
 Every company formats its list slightly differently — always run --dry-run
 and eyeball the first rows before uploading. Never invent missing fields.

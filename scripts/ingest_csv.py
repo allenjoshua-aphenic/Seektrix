@@ -16,14 +16,14 @@ Monthly workflow:
      STRONGLY RECOMMENDED: always fill company_name and folio_number — they
      form the duplicate-protection key (see Safety below).
 
-  2. Run:
-        python ingest_csv.py MRF_july2026.csv
-        python ingest_csv.py MRF_july2026.csv --dry-run          # validate only
-        python ingest_csv.py MRF_july2026.csv --table unclaimed_assets_live
+  2. Run (from the repo root):
+        python scripts/ingest_csv.py MRF_july2026.csv
+        python scripts/ingest_csv.py MRF_july2026.csv --dry-run  # validate only
+        python scripts/ingest_csv.py MRF_july2026.csv --table unclaimed_assets_live
 
 Requirements:
   - Python 3.8+ (standard library only — nothing to pip install)
-  - .env next to this script with VITE_SUPABASE_URL and
+  - .env in the repo root with VITE_SUPABASE_URL and
     SUPABASE_SERVICE_ROLE_KEY (service-role key needed because of RLS)
 
 Safety:
