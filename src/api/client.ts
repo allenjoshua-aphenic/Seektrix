@@ -1,3 +1,4 @@
+// testing the API client for search and status retrieval
 // hi this is the client side api for the search pipeline. It connects to the local express/fastapi backend server and handles the search submission and status polling.
 import { SearchQuery, UnclaimedAsset, PipelineStep, PipelineLog } from '../types';
 
