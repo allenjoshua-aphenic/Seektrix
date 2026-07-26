@@ -172,23 +172,26 @@ function computeFuzzyScore(s1: string, s2: string): number {
 }
 
 // ── HONEST ROW MAPPER ────────────────────────────────────────────────────────
-// Maps a Supabase row (live schema: holder_name, father_name, company_name,
-// folio_number, state, full_address, shares) to a LedgerRecord.
-// No field is ever invented: missing values stay empty/zero.
+// Maps a Supabase row from the search_holders RPC / unclaimed_holders table
+// (columns: company_name via join, full_name, father_or_husband_name,
+// folio_number, dp_client_id, state, address, shares, unclaimed_amount) to a
+// LedgerRecord. No field is ever invented: missing values stay empty/zero.
 function mapRowToRecord(row: any): LedgerRecord {
-  const comp = row.company_name || row.companyName || '';
+  // company_name comes flat from the RPC, or nested via a PostgREST embed (companies.company_name)
+  const comp = row.company_name || row.companyName || row.companies?.company_name || '';
+  const address = row.full_address || row.fullAddress || row.address || '';
   return {
     companyName: comp,
     bseCode: row.bse_code || row.bseCode || '',
-    holderName: row.holder_name || row.holderName || '',
-    folioNumber: row.folio_number || row.folioNumber || '',
+    holderName: row.full_name || row.holder_name || row.holderName || '',
+    folioNumber: row.folio_number || row.folioNumber || row.dp_client_id || '',
     unclaimedAmount: Number(row.unclaimed_amount ?? row.unclaimedAmount ?? 0),
-    municipalRegion: row.municipal_region || row.municipalRegion || row.full_address || row.state || '',
+    municipalRegion: address || row.state || '',
     disclosureSource: row.disclosure_source || row.disclosureSource || '',
-    fatherName: row.father_name || row.fatherName || '',
+    fatherName: row.father_or_husband_name || row.father_name || row.fatherName || '',
     shares: Number(row.shares ?? 0),
     state: row.state || '',
-    fullAddress: row.full_address || row.fullAddress || ''
+    fullAddress: address
   };
 }
 
@@ -205,7 +208,7 @@ async function searchSupabase(fullName: string, city: string): Promise<LedgerRec
     
     // 1. Try the RPC call first
     try {
-      const { data, error } = await client.rpc('search_shareholders', {
+      const { data, error } = await client.rpc('search_holders', {
         search_name: fullName.toLowerCase().trim(),
         search_city: resolvedCity.toLowerCase().trim()
       });
@@ -221,54 +224,25 @@ async function searchSupabase(fullName: string, city: string): Promise<LedgerRec
       console.warn('[SEEKTRIX] RPC exception:', rpcErr.message);
     }
 
-    // 2. Fallback to direct select from unclaimed_assets table
-    console.log('[SEEKTRIX] Falling back to direct select from unclaimed_assets table...');
+    // 2. Fallback (only if the RPC errors, e.g. not yet deployed): a SAFE,
+    //    server-side-filtered, LIMITED query on unclaimed_holders — never a full
+    //    table scan (the table can hold hundreds of thousands of rows).
+    console.log('[SEEKTRIX] RPC unavailable — falling back to a filtered unclaimed_holders query...');
+    const qName = fullName.toLowerCase().trim();
     const { data: rows, error: selectError } = await client
-      .from('unclaimed_assets')
-      .select('*');
+      .from('unclaimed_holders')
+      .select('full_name, father_or_husband_name, folio_number, dp_client_id, state, address, shares, unclaimed_amount, companies(company_name)')
+      .ilike('full_name', `%${qName}%`)
+      .limit(50);
 
     if (selectError) {
-      console.error('[SEEKTRIX] Direct table select failed:', selectError.message);
+      console.error('[SEEKTRIX] Fallback select failed:', selectError.message);
       return [];
     }
-
     if (!rows || rows.length === 0) {
-      console.log('[SEEKTRIX] Table unclaimed_assets is empty.');
       return [];
     }
-
-    console.log(`[SEEKTRIX] Fetched ${rows.length} real rows from Supabase table. Performing compliance matching...`);
-
-    const qName = fullName.toLowerCase().trim();
-    const qCity = resolvedCity.toLowerCase().trim();
-    const resolvedStateLower = resolvedState.toLowerCase().trim();
-
-    // Mirror the search_shareholders RPC: the NAME is the only filter; the
-    // region is a ranking signal, never a gate (records often carry old addresses).
-    const rowRegionOf = (row: any) =>
-      (row.municipal_region || row.municipalRegion || row.full_address || row.state || '').toLowerCase();
-
-    const nameMatched = rows.filter((row: any) => {
-      const rowName = (row.holder_name || row.holderName || '').toLowerCase().trim();
-      if (!rowName || !qName) return false;
-      return rowName.includes(qName) || qName.includes(rowName) || computeFuzzyScore(fullName, rowName) >= 70;
-    });
-
-    const regionRank = (row: any) => {
-      const rowRegion = rowRegionOf(row);
-      if (!rowRegion) return 1;
-      const stateMatch = resolvedStateLower !== '' && (rowRegion.includes(resolvedStateLower) || resolvedStateLower.includes(rowRegion));
-      const cityMatch = qCity !== '' && (rowRegion.includes(qCity) || qCity.includes(rowRegion) || computeFuzzyScore(resolvedCity, rowRegion.split(',')[0]) >= 70);
-      return stateMatch || cityMatch ? 0 : 1;
-    };
-
-    const matchedRows = nameMatched.sort((a: any, b: any) => regionRank(a) - regionRank(b));
-
-    if (matchedRows.length > 0) {
-      return matchedRows.map(mapRowToRecord);
-    }
-
-    return [];
+    return rows.map(mapRowToRecord);
 
   } catch (err) {
     console.error('[SEEKTRIX] Supabase search failed:', err);
@@ -296,7 +270,7 @@ async function startServer() {
     let dbStatus = 'not configured';
     if (client) {
       try {
-        const { error } = await client.from('unclaimed_assets').select().limit(1);
+        const { error } = await client.from('companies').select('id').limit(1);
         dbStatus = error ? `error: ${error.message}` : 'connected';
       } catch {
         dbStatus = 'unreachable';

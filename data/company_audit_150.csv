@@ -1,0 +1,152 @@
+sr_no,company_name,bse_scrip_code,nse_symbol,industry,has_data,data_available_upto,record_count,ingested_to_supabase,notes
+1,Reliance Industries Ltd,500325,RELIANCE,Oil & Gas / Telecom / Retail,No,,,No,[Widget only] Verified: 3 per-person lookup widgets only. No bulk file. BSE announcements scanned - no name lists. Source: https://www.ril.com/investors/shares/dividend-shares
+2,Tata Consultancy Services Ltd,532540,TCS,Information Technology,Partial,2019,1462,Yes,[Bulk PDF] Download in a NORMAL BROWSER (tcs.com blocks scripts). Richer 1146-page historic lists on Wayback Machine. Source: https://www.tcs.com/content/dam/tcs/pdf/discover-tcs/investor-relations/Unclaimed-Dividend-Details-for-2017/unclaimed-dividend-details-august-13-2013-October-24-2019.pdf
+3,HDFC Bank Ltd,500180,HDFCBANK,Banking & Financial Services,No,,,No,[Widget only] RTA Datamatics per-person portal. Erstwhile HDFC Ltd holders have separate lookup apps. Source: https://www.hdfcbank.com/personal/about-us/corporate-governance/shareholders-information-and-helpdesk/details-of-unclaimed-dividend
+4,Infosys Ltd,500209,INFY,Information Technology,Yes,,287,Yes,[Widget only] Folio/DP-ID lookup only. ~20 notice PDFs are newspaper ads without names. Source: https://www.infosys.com/investors/shareholder-services/unclaimed-dividend-shares.html
+5,ICICI Bank Ltd,532174,ICICIBANK,Banking & Financial Services,Partial,FY2018-19,38,No,[Bulk PDF] NARROW: only erstwhile ICICI Securities holders. No folio/address/shares. Main base is widget-only. Source: https://www.icici.bank.in/content/dam/icicibank/managed-assets/docs/investor/list-of-erstwhile-shareholders.pdf
+6,Larsen & Toubro Ltd,500510,LT,Engineering & Infrastructure,Yes,,16,Yes,[Widget only] KFin widget (PAN + captcha). Newspaper notices only. Source: https://ris.kfintech.com/services/IEPF/IEPFInfo.aspx?q=SaWKckFMJxE%3d
+7,ITC Ltd,500875,ITC,FMCG / Diversified,Not checked,,,No,
+8,Hindustan Unilever Ltd,500696,HINDUNILVR,FMCG,Not checked,,,No,
+9,Axis Bank Ltd,532215,AXISBANK,Banking & Financial Services,Not checked,,,No,
+10,Kotak Mahindra Bank Ltd,500247,KOTAKBANK,Banking & Financial Services,Yes,,7074,Yes,
+11,State Bank of India,500112,SBIN,Banking & Financial Services,Yes,FY1996-97 & 2026,38979,Yes,Downloaded: SBI FY1996-97 unclaimed-dividend list (names+address+amount). A 2026 'shares transferred to IEPF' PDF also exists but folios are privacy-masked. sbi.bank.in
+12,Bajaj Finance Ltd,500034,BAJFINANCE,Financial Services (NBFC),Partial,31-Mar-2025,97,Yes,"Downloaded IEPF-2 DEPOSIT list (.xlsm, names+folio+PAN+shares). The dividend/shares list itself is widget-only (KFin per-person lookup)."
+13,Tata Motors Ltd,500570,TATAMOTORS,Automobile,No,,,No,"Widget-only (KFin). Only newspaper-notice PDFs, no name table. tatamotors.com"
+14,Maruti Suzuki India Ltd,532500,MARUTI,Automobile,Partial,FY2015-16 to 2024-25,,No,"Bulk PDFs exist (shares-liable + unpaid-dividend, multiple years) on marutistoragenew Azure blob, but the storage account is currently DISABLED (403). Retry later or via Wayback."
+15,Sun Pharmaceutical Ind. Ltd,524715,SUNPHARMA,Pharmaceuticals,Yes,2015-16,142795,Yes,Downloaded Unclaimed-Dividend.csv (Full Name + Folio + DP-ID + Amount). sunpharma.com
+16,Wipro Ltd,507685,WIPRO,Information Technology,Yes,2017 (Wayback),758,Yes,Wayback-only: live bulk PDFs deleted. Downloaded 2017 IEPF-2 list part 1 of 14 (names+father+address+folio+amount) from web.archive.org.
+17,UltraTech Cement Ltd,532538,ULTRACEMCO,Cement,No,,,No,Widget-only (KFin). Only newspaper notices; no bulk name list on site or Wayback.
+18,Titan Company Ltd,500114,TITAN,Consumer Durables / Jewellery,Yes,2015 (Wayback),13666,Yes,"Wayback-only: Dividends2015.xls (~33,550 holders, names+folio+DP-ID+amount). Live URL 404s; downloaded via web.archive.org."
+19,Asian Paints Ltd,500820,ASIANPAINT,Paints & Chemicals,Yes,FY2024-25,416,Yes,Downloaded 'shares to be transferred to IEPF' list (names+folio+shares+amount). 15 yrs of files at static.asianpaints.com. BEST SOURCE.
+20,HCL Technologies Ltd,532281,HCLTECH,Information Technology,No,,,No,Widget-only. Every IEPF PDF is a scanned newspaper ad (no text/names). No bulk list on site or Wayback.
+21,Bajaj Finserv Ltd,532978,BAJAJFINSV,Financial Services,Not checked,,,No,
+22,Tech Mahindra Ltd,532755,TECHM,Information Technology,Not checked,,,No,
+23,Mahindra & Mahindra Ltd,500520,M&M,Automobile,Not checked,,,No,
+24,NTPC Ltd,532555,NTPC,Power,Not checked,,,No,
+25,Oil & Natural Gas Corp. Ltd,500312,ONGC,Oil & Gas,Not checked,,,No,
+26,Power Grid Corp. of India Ltd,532898,POWERGRID,Power,Not checked,,,No,
+27,Tata Steel Ltd,500470,TATASTEEL,Metals & Mining,Not checked,,,No,
+28,JSW Steel Ltd,500228,JSWSTEEL,Metals & Mining,Not checked,,,No,
+29,Hindalco Industries Ltd,500440,HINDALCO,Metals & Mining,Not checked,,,No,
+30,Cipla Ltd,500087,CIPLA,Pharmaceuticals,No,,,No,[Widget only] 4 per-person widgets. Notice PDFs 2016-2025 have no names. NOTE: row 50 is a duplicate of this company. Source: https://www.cipla.com/investors/unclaimed-data
+31,Dr. Reddy's Laboratories Ltd,500124,DRREDDY,Pharmaceuticals,Not checked,,,No,
+32,Divis Laboratories Ltd,532488,DIVISLAB,Pharmaceuticals,Not checked,,,No,
+33,Eicher Motors Ltd,505200,EICHERMOT,Automobile,Not checked,,,No,
+34,Hero MotoCorp Ltd,500182,HEROMOTOCO,Automobile,Not checked,,,No,
+35,Bharti Airtel Ltd,532454,BHARTIARTL,Telecom,Not checked,,,No,
+36,Grasim Industries Ltd,500300,GRASIM,Cement / Diversified,Not checked,,,No,
+37,Adani Ports & SEZ Ltd,532921,ADANIPORTS,Ports & Logistics,Not checked,,,No,
+38,Coal India Ltd,533278,COALINDIA,Mining,Not checked,,,No,
+39,BPCL (Bharat Petroleum Corp.),500547,BPCL,Oil & Gas,Not checked,,,No,
+40,Bajaj Auto Ltd,532977,BAJAJ-AUTO,Automobile,Not checked,,,No,
+41,Shriram Finance Ltd,511218,SHRIRAMFIN,Financial Services (NBFC),Not checked,,,No,
+42,IndusInd Bank Ltd,532187,INDUSINDBK,Banking & Financial Services,Not checked,,,No,
+43,Apollo Hospitals Enterprise Ltd,508869,APOLLOHOSP,Healthcare,Not checked,,,No,
+44,Nestle India Ltd,500790,NESTLEIND,FMCG,Not checked,,,No,
+45,Britannia Industries Ltd,500825,BRITANNIA,FMCG,Not checked,,,No,
+46,Tata Consumer Products Ltd,500800,TATACONSUM,FMCG,Not checked,,,No,
+47,LTIMindtree Ltd,540005,LTIM,Information Technology,Not checked,,,No,
+48,SBI Life Insurance Co. Ltd,540719,SBILIFE,Insurance,Not checked,,,No,
+49,HDFC Life Insurance Co. Ltd,540777,HDFCLIFE,Insurance,Not checked,,,No,
+50,Cipla Ltd,500087,CIPLA,Pharmaceuticals,No,,,No,[Widget only] DUPLICATE of row 30 - same company and BSE code. Skip this row. Source: https://www.cipla.com/investors/unclaimed-data
+51,Bharat Heavy Electricals Ltd,500103,BHEL,Capital Goods,Not checked,,,No,
+52,Steel Authority of India Ltd,500113,SAIL,Metals & Mining,Not checked,,,No,
+53,Indian Oil Corporation Ltd,530965,IOC,Oil & Gas,Not checked,,,No,Known to publish IEPF transfer details - HIGH PRIORITY to check (iocl.com/transfer-of-equity)
+54,Bharat Electronics Ltd,500049,BEL,Defence & Electronics,Not checked,,,No,
+55,Godrej Consumer Products Ltd,532424,GODREJCP,FMCG,Not checked,,,No,
+56,Pidilite Industries Ltd,500331,PIDILITIND,Chemicals,Not checked,,,No,
+57,Havells India Ltd,517354,HAVELLS,Consumer Durables,Not checked,,,No,
+58,Torrent Pharmaceuticals Ltd,500420,TORNTPHARM,Pharmaceuticals,Not checked,,,No,
+59,Dabur India Ltd,500096,DABUR,FMCG,Not checked,,,No,
+60,Colgate-Palmolive (India) Ltd,500830,COLPAL,FMCG,Not checked,,,No,
+61,Marico Ltd,531642,MARICO,FMCG,Not checked,,,No,
+62,Bosch Ltd,500530,BOSCHLTD,Auto Components,Not checked,,,No,BSE code partly hidden by watermark in source image - VERIFY code
+63,Siemens Ltd,500550,SIEMENS,Capital Goods,Not checked,,,No,
+64,ABB India Ltd,500002,ABB,Capital Goods,Not checked,,,No,
+65,3M India Ltd,523395,3MINDIA,Diversified,Not checked,,,No,
+66,Cummins India Ltd,500480,CUMMINSIND,Capital Goods,Not checked,,,No,
+67,Mphasis Ltd,526299,MPHASIS,Information Technology,Not checked,,,No,
+68,Persistent Systems Ltd,533179,PERSISTENT,Information Technology,Not checked,,,No,
+69,Tata Power Company Ltd,500400,TATAPOWER,Power,Not checked,,,No,
+70,Adani Green Energy Ltd,541450,ADANIGREEN,Power / Renewables,Not checked,,,No,
+71,ACC Ltd,500410,ACC,Cement,Not checked,,,No,
+72,Ambuja Cements Ltd,500425,AMBUJACEM,Cement,Not checked,,,No,
+73,The Ramco Cements Ltd,500260,RAMCOCEM,Cement,Not checked,,,No,
+74,Shree Cement Ltd,500387,SHREECEM,Cement,Not checked,,,No,
+75,Dalmia Bharat Ltd,542216,DALBHARAT,Cement,Not checked,,,No,
+76,Punjab National Bank,532461,PNB,Banking,Not checked,,,No,
+77,Bank of Baroda,532134,BANKBARODA,Banking,Not checked,,,No,
+78,Canara Bank,532483,CANBK,Banking,Not checked,,,No,
+79,Union Bank of India,532477,UNIONBANK,Banking,Not checked,,,No,
+80,Bank of India,532149,BANKINDIA,Banking,Not checked,,,No,
+81,General Insurance Corp. of India,540755,GICRE,Insurance,Not checked,,,No,
+82,New India Assurance Co. Ltd,540769,NIACL,Insurance,Not checked,,,No,
+83,Life Insurance Corp. of India,543526,LICI,Insurance,Not checked,,,No,
+84,LIC Housing Finance Ltd,500253,LICHSGFIN,Financial Services,Not checked,,,No,
+85,Muthoot Finance Ltd,533398,MUTHOOTFIN,Financial Services (NBFC),Not checked,,,No,Known to publish an IEPF shareholder list - HIGH PRIORITY. NOTE: row 148 is a duplicate.
+86,Cholamandalam Investment & Fin.,511243,CHOLAFIN,Financial Services (NBFC),Not checked,,,No,
+87,IDBI Bank Ltd,500116,IDBI,Banking,Not checked,,,No,
+88,GAIL (India) Ltd,532155,GAIL,Oil & Gas,Not checked,,,No,
+89,Petronet LNG Ltd,532522,PETRONET,Oil & Gas,Not checked,,,No,BSE code cut off in source image - VERIFY code
+90,Hindustan Petroleum Corp. Ltd,500104,HINDPETRO,Oil & Gas,Not checked,,,No,
+91,Castrol India Ltd,500870,CASTROLIND,Oil & Gas / Lubricants,Not checked,,,No,
+92,Tata Chemicals Ltd,500770,TATACHEM,Chemicals,Not checked,,,No,
+93,UPL Ltd,512070,UPL,Agrochemicals,Not checked,,,No,
+94,Coromandel International Ltd,506395,COROMANDEL,Fertilisers,Not checked,,,No,
+95,Chambal Fertilisers & Chem. Ltd,500085,CHAMBLFERT,Fertilisers,Not checked,,,No,
+96,Gujarat Fluorochemicals Ltd,542812,FLUOROCHEM,Chemicals,Not checked,,,No,
+97,Berger Paints India Ltd,509480,BERGEPAINT,Paints,Not checked,,,No,
+98,Kansai Nerolac Paints Ltd,500165,KANSAINER,Paints,Not checked,,,No,
+99,Akzo Nobel India Ltd,500710,AKZOINDIA,Paints,Not checked,,,No,
+100,Whirlpool of India Ltd,500238,WHIRLPOOL,Consumer Durables,Not checked,,,No,
+101,Voltas Ltd,500575,VOLTAS,Consumer Durables,Not checked,,,No,NOTE: row 141 is a duplicate of this company.
+102,Blue Star Ltd,500067,BLUESTARCO,Consumer Durables,Not checked,,,No,
+103,Crompton Greaves Consumer Elec.,539876,CROMPTON,Consumer Durables,Not checked,,,No,
+104,Thermax Ltd,500411,THERMAX,Capital Goods,Not checked,,,No,
+105,Bharat Forge Ltd,500493,BHARATFORG,Auto Components,Not checked,,,No,
+106,Motherson Sumi Wiring India Ltd,543498,MSUMI,Auto Components,Not checked,,,No,
+107,MRF Ltd,500290,MRF,Tyres,Not checked,,,No,
+108,Apollo Tyres Ltd,500877,APOLLOTYRE,Tyres,Not checked,,,No,
+109,Ceat Ltd,500878,CEATLTD,Tyres,Not checked,,,No,
+110,Balkrishna Industries Ltd,502355,BALKRISIND,Tyres,Not checked,,,No,
+111,Godrej Properties Ltd,533150,GODREJPROP,Real Estate,Not checked,,,No,
+112,DLF Ltd,532868,DLF,Real Estate,Not checked,,,No,
+113,Prestige Estates Projects Ltd,533274,PRESTIGE,Real Estate,Not checked,,,No,BSE code cut off in source image - VERIFY code
+114,Oberoi Realty Ltd,533273,OBEROIRLTY,Real Estate,Not checked,,,No,
+115,Interglobe Aviation Ltd (IndiGo),539448,INDIGO,Aviation,Not checked,,,No,
+116,Container Corp. of India Ltd,531344,CONCOR,Logistics,Not checked,,,No,
+117,Bharat Dynamics Ltd,541143,BDL,Defence,Not checked,,,No,
+118,HAL (Hindustan Aeronautics Ltd),541154,HAL,Defence,Not checked,,,No,
+119,IRCTC (Indian Railway Catering),542830,IRCTC,Railways / Services,Not checked,,,No,
+120,Indian Railway Finance Corp.,543257,IRFC,Financial Services,Not checked,,,No,
+121,Hindustan Zinc Ltd,500188,HINDZINC,Metals & Mining,Not checked,,,No,
+122,Vedanta Ltd,500295,VEDL,Metals & Mining,Not checked,,,No,
+123,National Aluminium Co. Ltd,532234,NATIONALUM,Metals & Mining,Not checked,,,No,
+124,MOIL Ltd,532636,MOIL,Mining,Not checked,,,No,
+125,NMDC Ltd,526371,NMDC,Mining,Not checked,,,No,
+126,Aurobindo Pharma Ltd,524804,AUROPHARMA,Pharmaceuticals,Not checked,,,No,
+127,Lupin Ltd,500257,LUPIN,Pharmaceuticals,Not checked,,,No,
+128,Zydus Lifesciences Ltd,532321,ZYDUSLIFE,Pharmaceuticals,Not checked,,,No,
+129,Alkem Laboratories Ltd,539523,ALKEM,Pharmaceuticals,Not checked,,,No,
+130,Ipca Laboratories Ltd,524494,IPCALAB,Pharmaceuticals,Not checked,,,No,
+131,Minda Industries Ltd (UNO Minda),532539,UNOMINDA,Auto Components,Not checked,,,No,Renamed UNO Minda; source image shows old symbol MINDAIND
+132,Exide Industries Ltd,500086,EXIDEIND,Auto Components,Not checked,,,No,
+133,Amara Raja Energy & Mobility,500008,ARE&M,Auto Components,Not checked,,,No,Source image shows old symbol AMARAJABAT
+134,Timken India Ltd,522113,TIMKEN,Auto Components,Not checked,,,No,
+135,SKF India Ltd,500472,SKFINDIA,Auto Components,Not checked,,,No,
+136,Kirloskar Brothers Ltd,500241,KIRLOSBROS,Capital Goods,Not checked,,,No,
+137,Kirloskar Electric Co. Ltd,500243,KIRLOSELE,Capital Goods,Not checked,,,No,VERIFY BSE code
+138,KEC International Ltd,532714,KEC,Capital Goods,Not checked,,,No,
+139,Kalpataru Projects Int. Ltd,522287,KPIL,Capital Goods,Not checked,,,No,
+140,NCC Ltd,500294,NCC,Construction,Not checked,,,No,
+141,Voltas Ltd,500575,VOLTAS,Consumer Durables,Not checked,,,No,DUPLICATE of row 101 - same company and BSE code. Skip this row.
+142,Raymond Ltd,500330,RAYMOND,Textiles,Not checked,,,No,
+143,Arvind Ltd,500101,ARVIND,Textiles,Not checked,,,No,
+144,Century Textiles & Industries,500040,CENTURYTEX,Textiles / Paper,Not checked,,,No,
+145,The Indian Hotels Co. Ltd (Taj),500850,INDHOTEL,Hotels,Not checked,,,No,
+146,ITC Hotels Ltd,800415,ITCHOTEL,Hotels,Not checked,,,No,UNUSUAL CODE: 800415 read from image but BSE codes are normally 5xxxxx - VERIFY (listed Jan 2025)
+147,EIH Ltd (Oberoi Hotels),500840,EIHOTEL,Hotels,Not checked,,,No,Known to publish year-wise IEPF shareholder lists - HIGH PRIORITY
+148,Muthoot Finance Ltd,533398,MUTHOOTFIN,Financial Services (NBFC),Not checked,,,No,DUPLICATE of row 85 - same company and BSE code. Skip this row.
+149,Manappuram Finance Ltd,531213,MANAPPURAM,Financial Services (NBFC),Not checked,,,No,
+150,CRISIL Ltd,500092,CRISIL,Ratings / Analytics,Not checked,,,No,
+151,PNB Gilts Ltd,532366,PNBGILTS,Financial Services,Yes,2018,382,Yes,[Bulk PDF] ALREADY INGESTED into unclaimed_assets_live (382 rows / 24220 shares). Not part of the original 150 - added as proof of the pipeline. VERIFY BSE code. Source: https://www.pnbgilts.com/uploads/annoucement/1524651350.pdf
