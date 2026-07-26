@@ -203,6 +203,21 @@ Under **Section 124(6), Companies Act 2013**, every listed company must publish 
 
 Note on columns: company lists give *folio/DP-Client ID, name, shares, address, PIN*. There is usually **no rupee amount** (the share count IS the claimable asset — value = shares × market price), no father's name, and the name is a single field, not first/last — leave blank whatever the source doesn't provide.
 
+### Team audit sheet — 150 companies ([company_audit_150.csv](../data/company_audit_150.csv) + [build_audit_sheet.gs](../scripts/build_audit_sheet.gs))
+
+The 150-company target list is tracked in a Google Sheet the whole team edits. Two ways to create it:
+
+- **Recommended — one click:** open https://sheets.new → *Extensions → Apps Script* → paste all of [scripts/build_audit_sheet.gs](../scripts/build_audit_sheet.gs) → Save → Run `buildAuditSheet` → authorise. It builds the **Company Audit** tab (all 151 rows, dropdowns, colour coding, filters, auto-dated `last_checked`) and a live **Dashboard** tab (coverage %, source-type breakdown, total records collected). Then *Share* with the team as Editors.
+- **Manual:** *File → Import →* upload [data/company_audit_150.csv](../data/company_audit_150.csv) (no formatting/dropdowns).
+
+Columns: `sr_no · company_name · bse_scrip_code · nse_symbol · industry · index_group · has_data · source_type · source_url · data_available_upto · record_count · fields_available · ingested_to_supabase · assigned_to · last_checked · notes`.
+
+**The number in the source list is the BSE scrip code** (6-digit BSE listing code, e.g. Reliance 500325); the short code beside it is the NSE ticker symbol.
+
+Known issues flagged in the list: **3 duplicate rows** — #50 Cipla (=#30), #141 Voltas (=#101), #148 Muthoot Finance (=#85) → **148 unique companies**; and 5 BSE codes to verify (rows 62, 89, 113, 137, 146) where the source image was cut off or the code looks unusual. Row 151 is PNB Gilts (already ingested — proof of pipeline), not part of the original 150.
+
+To keep Git in sync with the team's progress, run `exportSheetAsCsv()` in the Apps Script editor and paste the logged output back into `data/company_audit_150.csv`.
+
 ### Source-discovery sweep results (2026-07-19) — see [company_sources.csv](../data/company_sources.csv)
 
 A 10-agent web sweep checked every company currently in the demo DB for free official name-level lists. Verdict per company:
