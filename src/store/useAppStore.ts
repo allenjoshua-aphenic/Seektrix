@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { User, SearchQuery, AppView, PipelineStep, ToastNotification, AppPayment } from '../types';
+import { User, SearchQuery, AppView, PipelineStep, PipelineLog, ToastNotification, AppPayment } from '../types';
 import { MOCK_HISTORY } from '../data';
 
 interface AppState {
@@ -30,7 +30,16 @@ interface AppState {
   setActiveSearch: (query: SearchQuery | null) => void;
   setSelectedReport: (query: SearchQuery | null) => void;
   addSearchQuery: (query: SearchQuery) => void;
-  updateSearchProgress: (id: string, progressPercent: number, status: PipelineStep, matchedCount?: number, totalMatchedValue?: number, confidenceScore?: number) => void;
+  updateSearchProgress: (
+    id: string,
+    progressPercent: number,
+    status: PipelineStep,
+    matchedCount?: number,
+    totalMatchedValue?: number,
+    confidenceScore?: number,
+    logs?: PipelineLog[],
+    extra?: { engine?: string; degraded?: boolean; degradedReason?: string }
+  ) => void;
   toggleStarQuery: (id: string) => void;
   toggleArchiveQuery: (id: string) => void;
   retryQuery: (id: string) => void;
@@ -146,47 +155,44 @@ export const useAppStore = create<AppState>((set) => ({
     isErrorState: false
   })),
 
-  updateSearchProgress: (id, progressPercent, status, matchedCount, totalMatchedValue, confidenceScore) => set((state) => {
+  updateSearchProgress: (id, progressPercent, status, matchedCount, totalMatchedValue, confidenceScore, logs, extra) => set((state) => {
     const existing = state.searchHistory.find((item) => item.id === id);
     const wasCompletedOrFailed = existing ? (existing.status === 'completed' || existing.status === 'failed') : true;
-    
     const isTransitioningToCompleted = !wasCompletedOrFailed && status === 'completed';
 
-    // Merge match data if provided (from real API response)
-    const matchPatch = {
+    // Merge whatever the real API response provided
+    const patch: Partial<SearchQuery> = {
+      progressPercent,
+      status,
       ...(matchedCount !== undefined && { matchedCount }),
       ...(totalMatchedValue !== undefined && { totalMatchedValue }),
       ...(confidenceScore !== undefined && { confidenceScore }),
+      ...(logs !== undefined && { logs }),
+      ...(extra?.engine !== undefined && { engine: extra.engine }),
+      ...(extra?.degraded !== undefined && { degraded: extra.degraded }),
+      ...(extra?.degradedReason !== undefined && { degradedReason: extra.degradedReason }),
     };
 
-    const updatedHistory = state.searchHistory.map((item) =>
-      item.id === id ? { ...item, progressPercent, status, ...matchPatch } : item
-    );
-
-    const updatedActive = state.activeSearch?.id === id 
-      ? { ...state.activeSearch, progressPercent, status, ...matchPatch }
-      : state.activeSearch;
+    const updatedHistory = state.searchHistory.map((item) => (item.id === id ? { ...item, ...patch } : item));
+    const updatedActive = state.activeSearch?.id === id ? { ...state.activeSearch, ...patch } : state.activeSearch;
 
     let updatedToasts = [...state.toasts];
     if (isTransitioningToCompleted && existing) {
-      const matchedCount = existing.matchedCount;
-      const matchedVal = existing.totalMatchedValue;
-      const formattedVal = matchedVal > 0 
-        ? `₹${matchedVal.toLocaleString('en-IN')}` 
-        : '0';
-
-      const toastMessage = matchedCount > 0
-        ? `Asset discovery scan complete for ${existing.fullName}. Identified ${matchedCount} unclaimed asset matches worth ${formattedVal}!`
-        : `Asset discovery scan complete for ${existing.fullName}. No unclaimed matches detected in the processed records.`;
+      // Use the NEW numbers from this update, not the stale ones on the old record
+      const count = matchedCount ?? existing.matchedCount;
+      const value = totalMatchedValue ?? existing.totalMatchedValue;
+      const formattedVal = value > 0 ? `₹${value.toLocaleString('en-IN')}` : '';
+      const toastMessage = count > 0
+        ? `Search complete for ${existing.fullName}: ${count} matching record${count === 1 ? '' : 's'} found${formattedVal ? ` (unclaimed amount on record ${formattedVal})` : ''}.`
+        : `Search complete for ${existing.fullName}: no matching records in the registries loaded so far.`;
 
       const completedToast: ToastNotification = {
         id: `toast-${Date.now()}-${Math.random().toString(36).substr(2, 5)}`,
-        title: 'Scan Completed Successfully',
+        title: extra?.degraded ? 'Search Completed (partial)' : 'Search Completed',
         message: toastMessage,
-        type: 'success',
+        type: extra?.degraded ? 'warning' : 'success',
         timestamp: new Date().toLocaleTimeString(),
       };
-      
       updatedToasts = [completedToast, ...updatedToasts];
     }
 
