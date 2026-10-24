@@ -1,0 +1,153 @@
+sr_no,company_name,bse_scrip_code,nse_symbol,industry,has_data,data_available_upto,record_count,ingested_to_supabase,notes
+1,Reliance Industries Ltd,500325,RELIANCE,Oil & Gas / Telecom / Retail,No,,,No,[Widget only] Verified: 3 per-person lookup widgets only. No bulk file. BSE announcements scanned - no name lists. Source: https://www.ril.com/investors/shares/dividend-shares
+2,Tata Consultancy Services Ltd,532540,TCS,Information Technology,Yes,2019,1462,Yes,[Bulk PDF] Download in a NORMAL BROWSER (tcs.com blocks scripts). Richer 1146-page historic lists on Wayback Machine. Source: https://www.tcs.com/content/dam/tcs/pdf/discover-tcs/investor-relations/Unclaimed-Dividend-Details-for-2017/unclaimed-dividend-details-august-13-2013-October-24-2019.pdf
+3,HDFC Bank Ltd,500180,HDFCBANK,Banking & Financial Services,No,,,No,[Widget only] RTA Datamatics per-person portal. Erstwhile HDFC Ltd holders have separate lookup apps. Source: https://www.hdfcbank.com/personal/about-us/corporate-governance/shareholders-information-and-helpdesk/details-of-unclaimed-dividend
+4,Infosys Ltd,500209,INFY,Information Technology,Yes,,287,Yes,[Widget only] Folio/DP-ID lookup only. ~20 notice PDFs are newspaper ads without names. Source: https://www.infosys.com/investors/shareholder-services/unclaimed-dividend-shares.html
+5,ICICI Bank Ltd,532174,ICICIBANK,Banking & Financial Services,Yes,FY2018-19,38,No,[Bulk PDF] NARROW: only erstwhile ICICI Securities holders. No folio/address/shares. Main base is widget-only. Source: https://www.icici.bank.in/content/dam/icicibank/managed-assets/docs/investor/list-of-erstwhile-shareholders.pdf
+6,Larsen & Toubro Ltd,500510,LT,Engineering & Infrastructure,Yes,,16,Yes,[Widget only] KFin widget (PAN + captcha). Newspaper notices only. Source: https://ris.kfintech.com/services/IEPF/IEPFInfo.aspx?q=SaWKckFMJxE%3d
+7,ITC Ltd,500875,ITC,FMCG / Diversified,No,,,No,
+8,Hindustan Unilever Ltd,500696,HINDUNILVR,FMCG,No,,,No,
+9,Axis Bank Ltd,532215,AXISBANK,Banking & Financial Services,No,,,No,
+10,Kotak Mahindra Bank Ltd,500247,KOTAKBANK,Banking & Financial Services,Yes,,7074,Yes,
+11,State Bank of India,500112,SBIN,Banking & Financial Services,Yes,FY1996-97 & 2026,38979,Yes,Downloaded: SBI FY1996-97 unclaimed-dividend list (names+address+amount). A 2026 'shares transferred to IEPF' PDF also exists but folios are privacy-masked. sbi.bank.in
+12,Bajaj Finance Ltd,500034,BAJFINANCE,Financial Services (NBFC),Yes,31-Mar-2025,97,Yes,"Downloaded IEPF-2 DEPOSIT list (.xlsm, names+folio+PAN+shares). The dividend/shares list itself is widget-only (KFin per-person lookup)."
+13,Tata Motors Ltd,500570,TATAMOTORS,Automobile,No,,,No,"Widget-only (KFin). Only newspaper-notice PDFs, no name table. tatamotors.com"
+14,Maruti Suzuki India Ltd,532500,MARUTI,Automobile,Yes,FY2015-16 to 2024-25,,No,"Bulk PDFs exist (shares-liable + unpaid-dividend, multiple years) on marutistoragenew Azure blob, but the storage account is currently DISABLED (403). Retry later or via Wayback."
+15,Sun Pharmaceutical Ind. Ltd,524715,SUNPHARMA,Pharmaceuticals,Yes,2015-16,142795,Yes,Downloaded Unclaimed-Dividend.csv (Full Name + Folio + DP-ID + Amount). sunpharma.com
+16,Wipro Ltd,507685,WIPRO,Information Technology,Yes,2017 (Wayback),758,Yes,Wayback-only: live bulk PDFs deleted. Downloaded 2017 IEPF-2 list part 1 of 14 (names+father+address+folio+amount) from web.archive.org.
+17,UltraTech Cement Ltd,532538,ULTRACEMCO,Cement,No,,,No,Widget-only (KFin). Only newspaper notices; no bulk name list on site or Wayback.
+18,Titan Company Ltd,500114,TITAN,Consumer Durables / Jewellery,Yes,2015 (Wayback),13666,Yes,"Wayback-only: Dividends2015.xls (~33,550 holders, names+folio+DP-ID+amount). Live URL 404s; downloaded via web.archive.org."
+19,Asian Paints Ltd,500820,ASIANPAINT,Paints & Chemicals,Yes,FY2024-25,416,Yes,Downloaded 'shares to be transferred to IEPF' list (names+folio+shares+amount). 15 yrs of files at static.asianpaints.com. BEST SOURCE.
+20,HCL Technologies Ltd,532281,HCLTECH,Information Technology,No,,,No,Widget-only. Every IEPF PDF is a scanned newspaper ad (no text/names). No bulk list on site or Wayback.
+21,Bajaj Finserv Ltd,532978,BAJAJFINSV,Financial Services,Yes,FY2021-22,2178,Yes,"Downloaded XLSX unpaid-dividend register (name+address+DP-ID+folio+shares+amount), ~15,250 rows. aboutbajajfinserv.com"
+22,Tech Mahindra Ltd,532755,TECHM,Information Technology,Yes,FY2015-16,1653,Yes,Downloaded IEPF data PDF (name+folio+shares+dividend; no address). Several other years live on insights.techmahindra.com.
+23,Mahindra & Mahindra Ltd,500520,M&M,Automobile,No,,,No,Widget-only (KFin per-person lookup) + scanned newspaper notices. No bulk file on site or Wayback.
+24,NTPC Ltd,532555,NTPC,Power,Yes,Nov 2025,908,Yes,Downloaded 'shares liable to be transferred to IEPF Nov 2025' PDF (name+folio+address+shares+amount). ntpc.co.in
+25,Oil & Natural Gas Corp. Ltd,500312,ONGC,Oil & Gas,Yes,FY2024-25,24766,Yes,Downloaded unpaid-dividend PDF (name+folio/DP-ID+amount; no address/shares). 13 MB - exact count at ingestion. ongcindia.com
+26,Power Grid Corp. of India Ltd,532898,POWERGRID,Power,Yes,May 2026,748,Yes,Downloaded 'shares transferred to IEPF May 2026' PDF (name+father+address+state+pin+folio+DP-ID+shares+transfer date). powergrid.in
+27,Tata Steel Ltd,500470,TATASTEEL,Metals & Mining,No,,,No,Widget-only (per-folio widget) + newspaper notices. No file on site or Wayback.
+28,JSW Steel Ltd,500228,JSWSTEEL,Metals & Mining,No,,,No,"Widget-only (KFin). Only notices. Online 'list' PDFs are JSW ENERGY (different company), not JSW Steel."
+29,Hindalco Industries Ltd,500440,HINDALCO,Metals & Mining,Yes,2013-14 (Wayback),5910,Yes,Wayback-only: live site widget-only; recovered IEPF Form-2 PDF (name+father+address+folio+shares+amount+transfer date). Multiple FYs on archive.org.
+30,Cipla Ltd,500087,CIPLA,Pharmaceuticals,No,,,No,Widget-only. 4 per-person widgets; notice PDFs have no names. (Confirmed in the 1-20 sweep.)
+31,Dr. Reddy's Laboratories Ltd,500124,DRREDDY,Pharmaceuticals,Yes,2021 (Wayback),89,Yes,DOWNLOADED (Wayback): live drreddys.com /media/ URLs now 404 after CMS migration. IEPF transfer list 2021 (name+folio/DPID+shares+per-FY dividends). Source: web.archive.org/.../website-data-details-of-shares-for-transfer-to-iepf-final.pdf
+32,Divis Laboratories Ltd,532488,DIVISLAB,Pharmaceuticals,Yes,2025,566,Yes,DOWNLOADED: divislabs.com 'Dividend due for transfer to IEPF in 2025' (name+joint holders+folio/DP-ID+4 address lines+amount). Sibling shares-list + FY2026 files on same page.
+33,Eicher Motors Ltd,505200,EICHERMOT,Automobile,No,,,No,Widget-only: eicher.in per-person lookup (name+father+folio). Only newspaper notices downloadable; nothing on Wayback.
+34,Hero MotoCorp Ltd,500182,HEROMOTOCO,Automobile,No,,,No,Widget-only: KFin captcha lookup (ris.kfintech.com/hmliepf). No bulk file on heromotocorp.com; Wayback unreachable/none.
+35,Bharti Airtel Ltd,532454,BHARTIARTL,Telecom,Yes,FY2024 (IEPF-2),23696,Yes,DOWNLOADED: assets.airtel.in IEPF-2 validated file (name+father+address+folio+DP-ID+amount+shares). IEPF-4 xlsx (name+folio+shares) also available. BTVL = Airtel's former name.
+36,Grasim Industries Ltd,500300,GRASIM,Cement / Diversified,Yes,2018 (ZIP),,No,FOUND but NOT downloaded: grasim.com/upload/pdf/unpaid-unclaimed-dividends.zip (8.3MB) contains 2 IEPF Form-2 PDFs (name+father+address+folio+DP-ID+amount+date). Needs ZIP unpack step.
+37,Adani Ports & SEZ Ltd,532921,ADANIPORTS,Ports & Logistics,Yes,FY2018-19,286,Yes,DOWNLOADED: adaniports.com 'shares liable to be transferred to IEPF' (name+folio/DP-ID+shares+address). Encrypted PDF - needed cryptography lib.
+38,Coal India Ltd,533278,COALINDIA,Mining,Yes,2018,329,Yes,DOWNLOADED: archive.coalindia.in shareholders-liable list 16pp (name+DP-ID+address+shares). Encrypted PDF - needed cryptography lib.
+39,BPCL (Bharat Petroleum Corp.),500547,BPCL,Oil & Gas,Yes,FY2021-22,17772,Yes,DOWNLOADED: bharatpetroleum.in .xls IEPF-2 statement (name+father+address+folio+DP-ID+amount+transfer date). 2nd Interim file also available.
+40,Bajaj Auto Ltd,532977,BAJAJ-AUTO,Automobile,Yes,FY2026-27,,No,"FOUND but UNUSABLE: bajajauto.com PDF has only 47 names + folio - NO shares and NO amount, so rows would fail the DB check (amount-or-shares required). Amounts only via KFin captcha widget."
+41,Shriram Finance Ltd,511218,SHRIRAMFIN,Financial Services (NBFC),Yes,2026,145,Yes,DOWNLOADED: cdn.shriramfinance.in 'Shares and Dividend to be Transferred to IEPF 2026' (name+folio/DPID+shares+per-FY amounts; no address).
+42,IndusInd Bank Ltd,532187,INDUSINDBK,Banking & Financial Services,Yes,FY2017-18,301,Yes,DOWNLOADED: indusind.bank.in transfer-of-shares-to-IEPF list (name+folio+per-year amounts+base/current/IEPF holdings; no address).
+43,Apollo Hospitals Enterprise Ltd,508869,APOLLOHOSP,Healthcare,Yes,2015 (AGM),290,Yes,DOWNLOADED: apollohospitals.com IEPF-2 statement (name+father+address+folio+shares+amount+transfer date). Needs browser UA.
+44,Nestle India Ltd,500790,NESTLEIND,FMCG,Yes,2025,,No,FOUND but BLOCKED: nestle.in/sites/g/files/pydnoa451/files/2025-06/IEPF-Details_Website.pdf exists but the whole host is Cloudflare-gated - 403 even with stealth browser. DOWNLOAD MANUALLY in a browser.
+45,Britannia Industries Ltd,500825,BRITANNIA,FMCG,No,,,No,Widget-only: KFin Folio+PAN+CAPTCHA (ris.kfintech.com/biliepf). No bulk file on britannia.co.in or Wayback.
+46,Tata Consumer Products Ltd,500800,TATACONSUM,FMCG,Yes,2017 (Wayback),8228,Yes,"DOWNLOADED (Wayback): old tataglobalbeverages.com Section 124 statement, ~9,876 holders (name+folio+address+pincode+amount). Live tataconsumer.com is widget-only."
+47,LTIMindtree Ltd,540005,LTIM,Information Technology,Yes,2017 (archive),31,Yes,DOWNLOADED: investorsarchive.ltimindtree.com list (legacy Mindtree IEPF pending register: name+folio+base/current holdings; no address).
+48,SBI Life Insurance Co. Ltd,540719,SBILIFE,Insurance,No,,,No,"Widget-only: list exists on sbilife.co.in IR page but served via JS widget behind a 403-gated API; no direct URL, no Wayback copy."
+49,HDFC Life Insurance Co. Ltd,540777,HDFCLIFE,Insurance,No,,,No,"Widget-only: KFin per-folio captcha. Only newspaper notices on hdfclife.com. IEPF transfers have begun (25,685 shares per 2025 AGM)."
+50,Cipla Ltd,500087,CIPLA,Pharmaceuticals,No,,,No,[Widget only] DUPLICATE of row 30 - same company and BSE code. Skip this row. Source: https://www.cipla.com/investors/unclaimed-data
+51,Bharat Heavy Electricals Ltd,500103,BHEL,Capital Goods,Yes,FY2017-18,18212,Yes,"Unpaid dividend FY2017-18 final, .xls (MCA IEPF-2 template). bhel.com/sites/default/files/2025-09/Unpaid-dividend-wrt.-Final-dividend-2017-18.xls"
+52,Steel Authority of India Ltd,500113,SAIL,Metals & Mining,Yes,FY2024-25,132827,Yes,Largest single file found: Unpaid Dividends FY2018-19 to FY2024-25 .xlsx (11 MB). Host has an incomplete TLS chain - fetch with verify off. sail.co.in/sites/default/files/2026-05/
+53,Indian Oil Corporation Ltd,530965,IOC,Oil & Gas,Yes,2017-10-31,983,Yes,IEPF share-transfer data PDF. 7 such PDFs on site; this is the richest. iocl.com/download/IEPF-share-transfer-data-(2017-10-31).pdf
+54,Bharat Electronics Ltd,500049,BEL,Defence & Electronics,Yes,31-03-2019,20951,Yes,427-page IEPF-2 unpaid+bonus-fractional list with names/addresses/amounts. Incomplete TLS chain. bel-india.in/wp-content/uploads/2023/01/BEL-Unpaid-and-Unclaimed-Dividend-Amount-...-31.03.2019.pdf
+55,Godrej Consumer Products Ltd,532424,GODREJCP,FMCG,Yes,2025,3341,Yes,6495 holders / 820262 shares / Rs 2.81 cr. godrejcp.com is Akamai-blocked; sibling godrejindiasaarc.com serves the same file.
+56,Pidilite Industries Ltd,500331,PIDILITIND,Chemicals,Yes,FY2024-25,389,Yes,"Unclaimed dividend FY2024-25 PDF. Must use www.pidilite.com host, not assets. subdomain."
+57,Havells India Ltd,517354,HAVELLS,Consumer Durables,Yes,FY2018-19 (due 31-Aug-2026),28,Yes,Underlying shares of unclaimed dividend 2018-19; name/folio/shares/amount/address. Small list.
+58,Torrent Pharmaceuticals Ltd,500420,TORNTPHARM,Pharmaceuticals,Yes,latest interim,1987,Yes,List of shareholders whose interim dividend remained unclaimed - full field set. WAF blocks some fetchers; plain GET works.
+59,Dabur India Ltd,500096,DABUR,FMCG,Yes,2025,128,Yes,List of cases liable to be transferred to IEPF (New). Second 308-row file also on site.
+60,Colgate-Palmolive (India) Ltd,500830,COLPAL,FMCG,Yes,2nd interim FY2018-19,11421,Yes,"MCA .xlsm upload template, 11494 rows across sheets. colgateinvestors.co.in/documents/unclaimed-dividends/"
+61,Marico Ltd,531642,MARICO,FMCG,Yes,2025,93,Yes,Equity shares liable to be transferred to IEPF demat account. Three separate small lists on site (97+19+17 core rows).
+62,Bosch Ltd,500530,BOSCHLTD,Auto Components,Yes,2024,3873,Yes,"Unpaid dividend year 2024 PDF, ~5723 rows. bosch.in/media/our_company/shareholder_information/2024/"
+63,Siemens Ltd,500550,SIEMENS,Capital Goods,Yes,March 2026,3019,Yes,Shareholders identified for transfer to IEPF March 2026. Larger Section-124 FY23-24 report also available (3316 rows).
+64,ABB India Ltd,500002,ABB,Capital Goods,Yes,FY2017 (AGM 08-May-2019),3879,Yes,"Live abb.com 404s every unclaimed-dividend .xls and offers only a KFintech captcha widget; Wayback holds the full FY2005-FY2017 series. 3879 named investors, Rs 32,49,188.80."
+65,3M India Ltd,523395,3MINDIA,Diversified,Yes,31-03-2025 (37th AGM),125,Yes,"Statement of unpaid/unclaimed dividend, 37th AGM. multimedia.3m.com/mws/media/2589096O/"
+66,Cummins India Ltd,500480,CUMMINSIND,Capital Goods,Yes,31-03-2021,12490,Yes,"Combined unpaid data as of 31-03-2021, ~14429 records, 11 MB. WAF blocks some fetchers; plain GET works."
+67,Mphasis Ltd,526299,MPHASIS,Information Technology,Yes,31-03-2026,48,Yes,Dividend unpaid 7 consecutive years as at 31-Mar-2026. Small list (50 rows).
+68,Persistent Systems Ltd,533179,PERSISTENT,Information Technology,Yes,21-07-2025,849,Yes,"Consolidated unclaimed dividend as on 21-Jul-2025, 148-page IEPF-2. persistent.com/wp-content/uploads/2026/07/"
+69,Tata Power Company Ltd,500400,TATAPOWER,Power,Yes,2024 (Wayback),4677,Yes,Live site is widget-only now; Wayback snapshot of tatapower.com/pdf/investor-relations/IEPF-unencashed-dividend.pdf has 4896 records with full fields.
+70,Adani Green Energy Ltd,541450,ADANIGREEN,Power / Renewables,No,n/a,0,No,"No IEPF list can legally exist - Adani Green has never paid a dividend since its 2018 listing, so nothing can be unclaimed for 7 years."
+71,ACC Ltd,500410,ACC,Cement,Yes,2016 (Wayback),10519,Yes,Live acclimited.com retired the pages; Wayback holds the 10519-row XLSX of the unclaimed 78th final dividend.
+72,Ambuja Cements Ltd,500425,AMBUJACEM,Cement,Yes,2024,918,Yes,"Details of dividend and shares transferred to IEPF 2024, ~950 core rows. ambujagroup.com/documents/dividend-iepf/"
+73,The Ramco Cements Ltd,500260,RAMCOCEM,Cement,Yes,2025,3180,Yes,"IEPF-2 .xlsm, 3480 investors. ramcocements.in/cms/uploads/"
+74,Shree Cement Ltd,500387,SHREECEM,Cement,Yes,November 2017,344,Yes,"Shares transferred to IEPF Nov 2017, 367 rows. Links are hidden behind an AJAX endpoint on the site."
+75,Dalmia Bharat Ltd,542216,DALBHARAT,Cement,Yes,2019,2226,Yes,"Shares transferred to IEPF account in 2019, ~2305 rows. Served from dalmiacement.com."
+76,Punjab National Bank,532461,PNB,Banking,Yes,2005-06 onward,19821,Yes,461-page unclaimed dividend PDF plus a separate 265-page eOBC list. pnb.bank.in/document/dividend/
+77,Bank of Baroda,532134,BANKBARODA,Banking,Yes,FY2016-17,19291,Yes,IEPF-1 2016-2017; 16 such PDFs on site. URLs have no .pdf extension and 404 on HEAD - use GET.
+78,Canara Bank,532483,CANBK,Banking,Yes,FY2022-23,185251,Yes,"Largest .xlsx found (~192000 rows, 22 MB). canarabank.bank.in/documents/d/guest/unpaid-dividend-data-for-fy-2022-23"
+79,Union Bank of India,532477,UNIONBANK,Banking,No,n/a,0,No,"Widget-only: per-person lookup with captcha. The downloadable PDFs carry name+address only - no folio, shares or amount - so they would fail the DB CHECK constraint."
+80,Bank of India,532149,BANKINDIA,Banking,Yes,latest,31501,Yes,"List of unclaimed shares transferred to IEPF, ~33450 holders. WAF blocks some fetchers; plain GET works."
+81,General Insurance Corp. of India,540755,GICRE,Insurance,Yes,31-Mar-2025,16063,Yes,"357-pg PDF, exact count 16418 rows (Sl.No contiguous). Name/address/net amount/due date/FY, covers FY2017-18 to 2022-23. NO share column. Companion IEPF_Shares_transfer_for_FY_2017-18.pdf (295 rows) adds folio+share counts. gicre.in/images/2026/ - directory year does NOT match data year, read links off the page."
+82,New India Assurance Co. Ltd,540769,NIACL,Insurance,Yes,AGM 29-Oct-2020,3573,Yes,499-pg PDF print of MCA Form IEPF-2. 3838 investors x 2 rows each (cash amount + underlying share count). Full field set incl PAN/DOB/folio/DP-ID. URL REQUIRES ?guest=true or returns 401; site is an AngularJS SPA with zero links in HTML.
+83,Life Insurance Corp. of India,543526,LICI,Insurance,Yes,FY2021-22 as on 30-Jun-2026,13954,Yes,"Unclaimed final dividend register. Landing page /unclaimed-dividend-detail has NO links - the four per-FY sub-pages (/2021-222, /2022-233, /2023-242, /2024-253) carry them."
+84,LIC Housing Finance Ltd,500253,LICHSGFIN,Financial Services,Yes,31-Mar-2025,30379,Yes,"Unpaid dividend PDF from cdn.lichousing.com. Site is Next.js over headless WordPress - IEPF pages serve zero file links, URLs come from the CMS API."
+85,Muthoot Finance Ltd,533398,MUTHOOTFIN,Financial Services (NBFC),Yes,2025,22842,Yes,MCA .xlsm. www.muthootfinance.com returns 403 to plain fetchers (WAF); cdn.muthootfinance.com serves the files fine.
+86,Cholamandalam Investment & Fin.,511243,CHOLAFIN,Financial Services (NBFC),Yes,31-Mar-2023,19685,Yes,"MCA IEPF-2 .xls. Clean fetch. NOTE the two newest disclosures (FY2024, FY2025) are served as .zip and need an unpack step - this is the newest unzipped file."
+87,IDBI Bank Ltd,500116,IDBI,Banking,No,n/a,0,No,Widget-only: apps.idbibank.in sits behind an F5/BIG-IP ASM WAF and offers only a per-person lookup. No bulk file.
+88,GAIL (India) Ltd,532155,GAIL,Oil & Gas,Yes,FY2016-17 int to FY2019-20 int,55807,Yes,MCA IEPF-2 .xls served from gailebank.gail.co.in. The IEPF index is unreachable from the homepage nav and sits at a misspelled path: gailonline.com/Investr_infromtn.html
+89,Petronet LNG Ltd,532522,PETRONET,Oil & Gas,Yes,31-Mar-2026,80840,Yes,Largest in this batch after Whirlpool. Host serves an INCOMPLETE TLS CHAIN - fetch with verification disabled.
+90,Hindustan Petroleum Corp. Ltd,500104,HINDPETRO,Oil & Gas,Yes,FY2018-19 final to FY2025-26 interim,16989,Yes,.xlsx. Cloudflare returns 403 to plain/default-UA fetchers; needs a full browser header set.
+91,Castrol India Ltd,500870,CASTROLIND,Oil & Gas / Lubricants,Yes,IEPF-2,21133,Yes,"AEM /content/dam/ PDF, 18 MB. Clean fetch with a browser UA."
+92,Tata Chemicals Ltd,500770,TATACHEM,Chemicals,No,n/a,0,No,Widget-only: dedicated iepf.tatachemicals.com lookup behind an AppTrana WAF plus Google reCAPTCHA. No bulk file.
+93,UPL Ltd,512070,UPL,Agrochemicals,Yes,2017 to 2019,1103,Yes,"Equity shares transferred to IEPF. Clean fetch, no UA or TLS workaround needed."
+94,Coromandel International Ltd,506395,COROMANDEL,Fertilisers,Yes,FY2023-24 final,7324,Yes,Unpaid dividend PDF. All 10 PDF links are static anchors on /investors/dividend/.
+95,Chambal Fertilisers & Chem. Ltd,500085,CHAMBLFERT,Fertilisers,Yes,2018/2019,14094,Yes,"Hosted on investor.cfcl.in, NOT chambalfertilisers.com - that redirect is the only discovery hurdle. Clean fetch."
+96,Gujarat Fluorochemicals Ltd,542812,FLUOROCHEM,Chemicals,Yes,Demerger + Apr-2023,291,Yes,URL contains LITERAL SPACES that must stay percent-encoded. gfl.co.in/investors 404s; the real IR tree uses .php filenames.
+97,Berger Paints India Ltd,509480,BERGEPAINT,Paints,Yes,base year 2016-17,65,Yes,"Served from an S3 bucket. bergerpaints.com is a Drupal SPA - all download URLs are buried in embedded JSON as escaped field_downloadable_files values, none in the HTML."
+98,Kansai Nerolac Paints Ltd,500165,KANSAINER,Paints,Yes,FY2024-25,1459,Yes,MCA .xlsm from the Drupal files tree. Completely clean fetch.
+99,Akzo Nobel India Ltd,500710,AKZOINDIA,Paints,Yes,2017 IEPF-4,1783,Yes,COMPANY RENAMED: Akzo Nobel India Ltd became JSW Dulux Limited (fresh CoI 11-Mar-2026) after JSW Paints acquired ~61%. Old akzonobel.co.in presents a cert valid only for other domains; files now at jswdulux.com.
+100,Whirlpool of India Ltd,500238,WHIRLPOOL,Consumer Durables,Yes,IEPF-2,53119,Yes,Largest in this batch. Host serves an INCOMPLETE TLS CHAIN - fetch with verification disabled.
+101,Voltas Ltd,500575,VOLTAS,Consumer Durables,No,n/a,0,No,Widget-only per-person lookup on TSR/KFintech. No bulk file.
+102,Blue Star Ltd,500067,BLUESTARCO,Consumer Durables,No,,,No,Not researched - discovery stopped early at user request (2026-08-04); revisit in a later pass.
+103,Crompton Greaves Consumer Elec.,539876,CROMPTON,Consumer Durables,No,,,No,Not researched - discovery stopped early at user request (2026-08-04); revisit in a later pass.
+104,Thermax Ltd,500411,THERMAX,Capital Goods,Yes,2025,5231,Yes,IEPF-2 website PDF from thermaxglobal.com. Plain fetch 403s without a browser UA; HEAD always 403.
+105,Bharat Forge Ltd,500493,BHARATFORG,Auto Components,Yes,Interim FY2025-26,2728,Yes,Unclaimed & unpaid dividend list. IEPF page path is CASE-SENSITIVE on bharatforge.com.
+106,Motherson Sumi Wiring India Ltd,543498,MSUMI,Auto Components,No,n/a,0,No,"Demerged/listed 2022 - no dividend can be 7 years unclaimed yet, so no IEPF list can legally exist."
+107,MRF Ltd,500290,MRF,Tyres,No,,,No,Not researched - discovery stopped early at user request (2026-08-04); revisit in a later pass.
+108,Apollo Tyres Ltd,500877,APOLLOTYRE,Tyres,Yes,2009 to 2016,2990,Yes,Unclaimed dividend 2009-2016 from corporate.apollotyres.com DAM; the bulk file is NOT on the IEPF page itself.
+109,Ceat Ltd,500878,CEATLTD,Tyres,Yes,25-Jul-2025 decl.,5747,Yes,46 MB / 10178-page IEPF-2 PDF - source repeats each investor many times; 5747 unique folio+date rows kept. ceat.com DAM direct URL is clean.
+110,Balkrishna Industries Ltd,502355,BALKRISIND,Tyres,No,,,No,Not researched - discovery stopped early at user request (2026-08-04); revisit in a later pass.
+111,Godrej Properties Ltd,533150,GODREJPROP,Real Estate,Yes,FY2014-15,379,Yes,Statement of shares due for IEPF from Azure-blob CDN. Akamai 403s the www site; files live on gplwebsitecdnblob.blob.core.windows.net.
+112,DLF Ltd,532868,DLF,Real Estate,No,,,No,Not researched - discovery stopped early at user request (2026-08-04); revisit in a later pass.
+113,Prestige Estates Projects Ltd,533274,PRESTIGE,Real Estate,Yes,FY2014-15,310,Yes,MCA IEPF-2 PDF on CloudFront. Corporate-site investor pages are soft-404 traps (200 with 'No Data Found').
+114,Oberoi Realty Ltd,533273,OBEROIRLTY,Real Estate,Yes,2025,2668,Yes,Unpaid dividend website PDF on CloudFront (www.oberoirealty.com 403s plain fetchers). Page banner repeats every page - parser strips it.
+115,Interglobe Aviation Ltd (IndiGo),539448,INDIGO,Aviation,No,,,No,Not researched - discovery stopped early at user request (2026-08-04); revisit in a later pass.
+116,Container Corp. of India Ltd,531344,CONCOR,Logistics,No,,,No,Not researched - discovery stopped early at user request (2026-08-04); revisit in a later pass.
+117,Bharat Dynamics Ltd,541143,BDL,Defence,Yes,Final div FY2017-18,911,Yes,Unclaimed final dividend 2017-18 PDF; filename has literal spaces+parentheses needing percent-encoding. bdl-india.in clean TLS.
+118,HAL (Hindustan Aeronautics Ltd),541154,HAL,Defence,No,,,No,Not researched - discovery stopped early at user request (2026-08-04); revisit in a later pass.
+119,IRCTC (Indian Railway Catering),542830,IRCTC,Railways / Services,Yes,31-03-2025,40541,Yes,"Unclaimed dividend as on 31.03.2025, 294-pg PDF on irctc.com (note company's own typo 'Detais' in the filename; spaces+parens must stay encoded)."
+120,Indian Railway Finance Corp.,543257,IRFC,Financial Services,Yes,1st interim FY2024-25,29246,Yes,"8th unpaid dividend register, 1707-pg PDF. irfc.co.in has incomplete TLS chain + F5 BIG-IP on HTML pages; direct PDF GET works."
+121,Hindustan Zinc Ltd,500188,HINDZINC,Metals & Mining,Yes,IEPF-7 Jul-2023,268,Yes,"MCA IEPF-7 render from hzlindia.com (Strapi /uploads/, hash-suffixed). IEPF pages only discoverable via sitemap-pages.xml."
+122,Vedanta Ltd,500295,VEDL,Metals & Mining,Yes,1st interim FY2023-24,19467,Yes,"Dividend unpaid register, 776-pg PDF. Bulk registers live on parent-group domain vedantaresources.com - vedantalimited.com itself is widget-only."
+123,National Aluminium Co. Ltd,532234,NATIONALUM,Metals & Mining,Yes,2009-10 to 2018-19,1425,Yes,"Cumulative shares-transferred register, 111 pg. Nominal value column is face value, NOT unclaimed amount - only share counts stored."
+124,MOIL Ltd,532636,MOIL,Mining,Yes,2nd interim FY2025-26,5686,Yes,Unpaid dividend statement from backend.moil.nic.in. Parsed 5686 clean rows.
+125,NMDC Ltd,526371,NMDC,Mining,Yes,as on 09-06-2026,8872,Yes,"1056-pg mainframe-style statement, one section per bank+dividend-year; serial glued to name ('18.NAME')."
+126,Aurobindo Pharma Ltd,524804,AUROPHARMA,Pharmaceuticals,Yes,interim FY2025-26,1543,Yes,Unpaid dividend register from aurobindo.com API uploads path.
+127,Lupin Ltd,500257,LUPIN,Pharmaceuticals,Yes,FY2024-25,1920,Yes,"Unpaid-dividend list. Trailing number on each row is a serial, not a year (parser bug fixed). Under-captured: ~1.9k of ~3.7k raw rows parse cleanly."
+128,Zydus Lifesciences Ltd,532321,ZYDUSLIFE,Pharmaceuticals,Yes,as on 31-03-2023,21986,No,"PARKED - VERIFIED, NOT INGESTED: would cross the 460 MB stop (projected 461). 2023-pg MCA statement from zyduslife.com. Load after Pro upgrade or space reclaim."
+129,Alkem Laboratories Ltd,539523,ALKEM,Pharmaceuticals,Yes,interim FY2017-18,1726,Yes,Unpaid data PDF from admin.alkemlabs.com (Strapi uploads).
+130,Ipca Laboratories Ltd,524494,IPCALAB,Pharmaceuticals,Yes,Dec-2021,1845,Yes,IEPF suspense-account shareholder list from ipca.com.
+131,Minda Industries Ltd (UNO Minda),532539,UNOMINDA,Auto Components,Yes,as at 30-09-2015 (Wayback),519,Yes,Wayback-only: unominda.com purged pre-rename files. Year-wise unclaimed details under old name Minda Industries.
+132,Exide Industries Ltd,500086,EXIDEIND,Auto Components,Yes,final FY2022-23,9612,Yes,MCA IEPF-2 .xls from docs.exideindustries.com.
+133,Amara Raja Energy & Mobility,500008,ARE&M,Auto Components,Yes,as on 31-03-2026,39218,No,"PARKED - VERIFIED, NOT INGESTED: no space after the 460 MB stop. Unclaimed sheet under new name at amararajaeandm.com (renamed from Amara Raja Batteries 2023)."
+134,Timken India Ltd,522113,TIMKEN,Auto Components,Yes,FY2024-25,6967,Yes,Unpaid dividend list from timken.com WP uploads.
+135,SKF India Ltd,500472,SKFINDIA,Auto Components,Yes,IEPF-2,11360,Yes,"266-pg MCA statement served from cdn.skfmediahub.skf.com (hash path, no meaningful filename)."
+136,Kirloskar Brothers Ltd,500241,KIRLOSBROS,Capital Goods,Yes,as on 31-03-2025,4545,Yes,"Unclaimed dividend list, MCA-flowed layout."
+137,Kirloskar Electric Co. Ltd,500243,KIRLOSELE,Capital Goods,No,n/a,0,No,No dividend declared since before 2000 (chronically loss-making) - no unclaimed list can exist.
+138,KEC International Ltd,532714,KEC,Capital Goods,Yes,FY2023-24,8927,Yes,Unpaid dividend .xlsx. Headers use 'Amount Transferred' capital-T variant (parser normalizes).
+139,Kalpataru Projects Int. Ltd,522287,KPIL,Capital Goods,Yes,IEPF-2 2023,13941,Yes,MCA IEPF-2 .xls via kalpataruprojects.com/api/view-file/. Found under new name (renamed from Kalpataru Power Transmission 2023).
+140,NCC Ltd,500294,NCC,Construction,Yes,IEPF-2 2026,606,Yes,638-pg PDF but only the physical-folio section carries shares+amount (606 rows); the ~21k demat rows have name+warrant only and fail the DB CHECK.
+141,Voltas Ltd,500575,VOLTAS,Consumer Durables,No,n/a,0,No,Duplicate of #101 Voltas - widget-only per-person lookup.
+142,Raymond Ltd,500330,RAYMOND,Textiles,Yes,FY2015-16 to FY2021-22,723,Yes,"Shares liable for IEPF transfer with per-FY unclaimed amounts, from api.raymond.in uploads."
+143,Arvind Ltd,500101,ARVIND,Textiles,Yes,IEPF-2 div FY2022-23,24620,No,"PARKED - VERIFIED, NOT INGESTED: no space after the 460 MB stop. MCA .xlsm from arvind.com."
+144,Century Textiles & Industries,500040,CENTURYTEX,Textiles / Paper,Yes,FY-1 to FY-7,20351,Yes,MCA statement now hosted by adityabirlarealestate.com (renamed from Century Textiles 2024).
+145,The Indian Hotels Co. Ltd (Taj),500850,INDHOTEL,Hotels,No,n/a,0,No,Widget-only: exact-folio per-person lookup on TSR Darashaw. No bulk file.
+146,ITC Hotels Ltd,800415,ITCHOTEL,Hotels,No,n/a,0,No,Demerged from ITC and listed Jan-2025 - 7-year unclaimed window cannot have elapsed; no list exists.
+147,EIH Ltd (Oberoi Hotels),500840,EIHOTEL,Hotels,Yes,all years,8698,Yes,90 MB / 2294-pg consolidated MCA statement - largest file ever processed in this project.
+148,Muthoot Finance Ltd,533398,MUTHOOTFIN,Financial Services (NBFC),Yes,2025,0,Yes,"DUPLICATE of #85 Muthoot Finance - same company, ingested there (22,842 rows). Count kept at 0 here so totals are not double-counted."
+149,Manappuram Finance Ltd,531213,MANAPPURAM,Financial Services (NBFC),Yes,1st interim FY2024-25,3539,Yes,Warrant-level .xls register from manappuram.com.
+150,CRISIL Ltd,500092,CRISIL,Ratings / Analytics,Yes,final div 2024,284,Yes,MCA-like .xlsx (headers without 'Investor' prefix) from crisil.com DAM.
+151,PNB Gilts Ltd,532366,PNBGILTS,Financial Services,Yes,2018,382,Yes,[Bulk PDF] ALREADY INGESTED into unclaimed_assets_live (382 rows / 24220 shares). Not part of the original 150 - added as proof of the pipeline. VERIFY BSE code. Source: https://www.pnbgilts.com/uploads/annoucement/1524651350.pdf
+152,ISGEC Heavy Engineering Ltd,533033,ISGEC,Capital Goods,Yes,2016,312,Yes,Team manual download; ingested with the batch 1-20 wave.

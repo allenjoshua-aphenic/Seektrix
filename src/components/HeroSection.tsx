@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Shield, User, MapPin, Mail, ArrowRight, Server, Sparkles, FileText, CheckCircle2, ChevronDown } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useNameSuggest } from '../hooks/useNameSuggest';
 
 // Indian States and Cities Map
 const STATE_CITIES_MAP: Record<string, string[]> = {
@@ -47,14 +48,27 @@ export default function HeroSection({ onLaunchSearch, isAuthenticated }: HeroSec
   const [email, setEmail] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
+  // Live preview against the real registry: debounced 350 ms, previous
+  // request cancelled on every new keystroke (AbortController), stale
+  // responses discarded by sequence number.
+  const suggest = useNameSuggest(fullName, selectedState);
+
+  // Rules: full name OR email is enough. State and city are optional — a state
+  // turns this into an advanced search narrowed to records registered there.
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!fullName.trim() || !selectedState || !selectedCity || !email.trim()) {
-      setErrorMsg('All fields are requested to complete the search registry query.');
+    const name = fullName.trim();
+    const mail = email.trim();
+    if (!name && !mail) {
+      setErrorMsg('Enter your full name or your email address to search. State and city are optional.');
+      return;
+    }
+    if (mail && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)) {
+      setErrorMsg('That email address does not look right.');
       return;
     }
     setErrorMsg('');
-    onLaunchSearch(fullName, selectedCity, email, selectedState);
+    onLaunchSearch(name, selectedCity, mail, selectedState);
   };
 
   const FloatingDocument = ({ 
@@ -136,7 +150,7 @@ export default function HeroSection({ onLaunchSearch, isAuthenticated }: HeroSec
                   {/* Your Full Name */}
                   <div className="relative">
                     <label className="block text-xs font-mono tracking-widest text-[#171717] uppercase font-extrabold mb-2">
-                      Your Full Name
+                      Your Full Name <span className="normal-case tracking-normal font-semibold text-[#646464]">· or email below</span>
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-medium-gray col-span-1">
@@ -144,7 +158,6 @@ export default function HeroSection({ onLaunchSearch, isAuthenticated }: HeroSec
                       </div>
                       <input
                         type="text"
-                        required
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
                         placeholder="e.g. Ramesh Chandra Sen"
@@ -157,7 +170,7 @@ export default function HeroSection({ onLaunchSearch, isAuthenticated }: HeroSec
                   {/* Email Address */}
                   <div className="relative">
                     <label className="block text-xs font-mono tracking-widest text-[#171717] uppercase font-extrabold mb-2">
-                      Email Address
+                      Email Address <span className="normal-case tracking-normal font-semibold text-[#646464]">· optional</span>
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-medium-gray">
@@ -165,7 +178,6 @@ export default function HeroSection({ onLaunchSearch, isAuthenticated }: HeroSec
                       </div>
                       <input
                         type="email"
-                        required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="e.g. ramesh@outlook.com"
@@ -178,14 +190,13 @@ export default function HeroSection({ onLaunchSearch, isAuthenticated }: HeroSec
                   {/* Select State */}
                   <div className="relative">
                     <label className="block text-xs font-mono tracking-widest text-[#171717] uppercase font-extrabold mb-2">
-                      Select State
+                      State <span className="normal-case tracking-normal font-semibold text-[#646464]">· optional, narrows results</span>
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-medium-gray">
                         <MapPin className="w-4.5 h-4.5 text-[#171717]/60" />
                       </div>
                       <select
-                        required
                         value={selectedState}
                         onChange={(e) => {
                           setSelectedState(e.target.value);
@@ -210,14 +221,13 @@ export default function HeroSection({ onLaunchSearch, isAuthenticated }: HeroSec
                   {/* Select City */}
                   <div className="relative">
                     <label className="block text-xs font-mono tracking-widest text-[#171717] uppercase font-extrabold mb-2">
-                      Select City
+                      City <span className="normal-case tracking-normal font-semibold text-[#646464]">· optional</span>
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-medium-gray">
                         <MapPin className="w-4.5 h-4.5 text-[#171717]/60" />
                       </div>
                       <select
-                        required
                         disabled={!selectedState}
                         value={selectedCity}
                         onChange={(e) => setSelectedCity(e.target.value)}
@@ -239,6 +249,31 @@ export default function HeroSection({ onLaunchSearch, isAuthenticated }: HeroSec
                     </div>
                   </div>
                 </div>
+
+                {/* Field rules, stated plainly */}
+                <p className="text-[11px] text-[#646464] font-sans leading-relaxed" id="hero-field-rules">
+                  <span className="font-bold text-[#171717]">Your name or your email is enough to search.</span>{' '}
+                  State and city are optional: choose a state for an advanced search narrowed to records registered there, or leave it blank to search all of India.
+                  {!fullName.trim() && email.trim() && (
+                    <span className="block mt-1 text-cofounder-blue font-semibold">No name typed — we will read the name from your email address and search for that.</span>
+                  )}
+                </p>
+
+                {/* Live preview: only a count, only when there is something to count */}
+                {suggest.status === 'ready' && suggest.total > 0 && (
+                  <div
+                    className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 rounded-xl border border-cofounder-blue/25 bg-cofounder-blue/5 backdrop-blur-md px-4 py-2.5 text-xs font-sans"
+                    id="hero-live-preview"
+                    aria-live="polite"
+                  >
+                    <span className="font-bold text-[#171717]">
+                      <span className="text-cofounder-blue">{suggest.total >= 50 ? '50+' : suggest.total}</span>
+                      {` potential match${suggest.total === 1 ? '' : 'es'} for "${suggest.query}"`}
+                      {selectedState ? ` in ${selectedState}` : ' across India'}
+                    </span>
+                    <span className="text-[11px] font-semibold text-[#646464] shrink-0">Press Search to see them</span>
+                  </div>
+                )}
 
                 {errorMsg && (
                   <p className="text-xs text-red-500 font-mono font-bold" id="form-error-msg">{errorMsg}</p>
@@ -305,12 +340,14 @@ export default function HeroSection({ onLaunchSearch, isAuthenticated }: HeroSec
               <motion.circle 
                 cx="340" cy="180" r="3" 
                 fill="#0081c0"
+                initial={{ cx: 340, cy: 180, opacity: 0 }}
                 animate={{ cx: [340, 630], cy: [180, 300], opacity: [0, 1, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeOut' }}
               />
               <motion.circle 
                 cx="80" cy="220" r="2.5" 
                 fill="#41a1cf"
+                initial={{ cx: 80, cy: 220, opacity: 0 }}
                 animate={{ cx: [80, 340], cy: [220, 180], opacity: [0, 0.8, 0] }}
                 transition={{ duration: 3.2, delay: 1, repeat: Infinity, ease: 'easeInOut' }}
               />

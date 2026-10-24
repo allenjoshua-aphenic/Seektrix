@@ -203,6 +203,21 @@ Under **Section 124(6), Companies Act 2013**, every listed company must publish 
 
 Note on columns: company lists give *folio/DP-Client ID, name, shares, address, PIN*. There is usually **no rupee amount** (the share count IS the claimable asset — value = shares × market price), no father's name, and the name is a single field, not first/last — leave blank whatever the source doesn't provide.
 
+### Team audit sheet — 150 companies ([company_audit_150.csv](../data/company_audit_150.csv) + [build_audit_sheet.gs](../scripts/build_audit_sheet.gs))
+
+The 150-company target list is tracked in a Google Sheet the whole team edits. Two ways to create it:
+
+- **Recommended — one click:** open https://sheets.new → *Extensions → Apps Script* → paste all of [scripts/build_audit_sheet.gs](../scripts/build_audit_sheet.gs) → Save → Run `buildAuditSheet` → authorise. It builds the **Company Audit** tab (all 151 rows, dropdowns, colour coding, filters, auto-dated `last_checked`) and a live **Dashboard** tab (coverage %, source-type breakdown, total records collected). Then *Share* with the team as Editors.
+- **Manual:** *File → Import →* upload [data/company_audit_150.csv](../data/company_audit_150.csv) (no formatting/dropdowns).
+
+Columns: `sr_no · company_name · bse_scrip_code · nse_symbol · industry · index_group · has_data · source_type · source_url · data_available_upto · record_count · fields_available · ingested_to_supabase · assigned_to · last_checked · notes`.
+
+**The number in the source list is the BSE scrip code** (6-digit BSE listing code, e.g. Reliance 500325); the short code beside it is the NSE ticker symbol.
+
+Known issues flagged in the list: **3 duplicate rows** — #50 Cipla (=#30), #141 Voltas (=#101), #148 Muthoot Finance (=#85) → **148 unique companies**; and 5 BSE codes to verify (rows 62, 89, 113, 137, 146) where the source image was cut off or the code looks unusual. Row 151 is PNB Gilts (already ingested — proof of pipeline), not part of the original 150.
+
+To keep Git in sync with the team's progress, run `exportSheetAsCsv()` in the Apps Script editor and paste the logged output back into `data/company_audit_150.csv`.
+
 ### Source-discovery sweep results (2026-07-19) — see [company_sources.csv](../data/company_sources.csv)
 
 A 10-agent web sweep checked every company currently in the demo DB for free official name-level lists. Verdict per company:
@@ -242,6 +257,12 @@ For the next company: `python scripts/convert_iepf_pdf.py <list.pdf> <out.csv> -
 - **Compliance posture**: these lists are published under legal mandate — using them to help owners discover claims is legitimate. Handle them as PII (your RLS lockdown is right), never present Seektrix output as a government document, and remember Seektrix is a private service assisting with claims, not affiliated with IEPF/MCA.
 
 ## 7. Honest Status: What Is Still NOT Production-Grade
+
+> **2026-10-17 update — search engine rewrite.** Measured live: the v1 `search_holders` function (pg_trgm `%` at threshold 0.3) hit Supabase's 8 s statement timeout for most real names on 13.7 lakh rows, and `server.ts` silently fell back to an unranked `ILIKE` scan. The GIN trigram index exists and works; the fix needed **no new index and no storage**. What changed:
+> - `database/search_holders_v2.sql` — new SQL function (word-match + typo-match modes, per-call threshold, state filter, initials regex). **Must be pasted into the Supabase SQL Editor once**; until then the server runs v1 and marks every result *degraded*.
+> - `server/search/` — staged engine, Node re-ranking with reasons, 7.5 s abort budget per DB call, result cache (the dashboard no longer re-runs the search), rate limits, input validation, honest progress logs.
+> - Client: debounced + cancellable type-ahead (`/api/suggest`), AbortController on every fetch, progress screen driven by real server stages, match score + reasons on the results table, state passed through to the API.
+> - Verified on a local Postgres 17 with 400k synthetic names (all stages 4–170 ms, index used) and against the live project on the fallback path. `scripts/search_engine_selftest.ts` and `scripts/engine_local_e2e.ts` reproduce the checks.
 
 Fixed this session: **results integrity** (the make-or-break item). Still open, in priority order:
 

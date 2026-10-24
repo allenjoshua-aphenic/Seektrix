@@ -17,9 +17,12 @@ import ToastContainer from './components/ToastContainer';
 
 import { useAppStore } from './store/useAppStore';
 import { generatePipelineLogs } from './data';
-import { PipelineStep, SearchQuery } from './types';
+import { AppView, PipelineStep, SearchQuery } from './types';
 import { useSearchPolling } from './hooks/useSearchPolling';
 import { searchApi } from './api/client';
+
+const ALL_VIEWS: AppView[] = ['landing', 'auth', 'dashboard', 'status', 'pricing', 'admin', 'admin-login', 'settings', 'privacy', 'terms', 'compliance-disclaimer'];
+const LEGAL_VIEWS: AppView[] = ['privacy', 'terms', 'compliance-disclaimer'];
 
 export default function App() {
   // Mount the real compliance query progress polling agent
@@ -54,10 +57,11 @@ export default function App() {
   // Search Submission Flow
   const handleLaunchSearch = async (fullName: string, city: string, email: string, state?: string) => {
     if (!currentUser) {
-      login(fullName, email, city, 'user');
+      // Name or email may be empty now; never show a blank identity in the navbar.
+      login(fullName || email.split('@')[0] || 'Guest', email, city || state || '', 'user');
     }
 
-    const res = await searchApi.submitSearch(fullName, city, email);
+    const res = await searchApi.submitSearch(fullName, city, email, state || '');
     if (res.error || !res.data) {
       alert(res.error || 'Failed to initiate secure registry lookup.');
       return;
@@ -134,6 +138,48 @@ export default function App() {
       window.removeEventListener('hashchange', handleHashChange);
     };
   }, [setView]);
+
+  // ── Browser history ↔ views ────────────────────────────────────────────────
+  // Views live in the store, not in the URL, so without this the browser's Back
+  // button left the site entirely. Every view change now records a history entry;
+  // Back/Forward restore the view. Finishing a search REPLACES the progress page
+  // with the results page, so Back from the results returns to the landing page.
+  const popNavRef = React.useRef(false);
+  const prevViewRef = React.useRef<AppView>(currentView);
+
+  React.useEffect(() => {
+    const stateView = window.history.state && (window.history.state as any).view;
+    if (!stateView) {
+      window.history.replaceState({ view: currentView }, '');
+    }
+    const onPop = (e: PopStateEvent) => {
+      const v = e.state && (e.state as any).view;
+      const target: AppView = ALL_VIEWS.includes(v) ? v : 'landing';
+      if (useAppStore.getState().currentView === target) return;
+      popNavRef.current = true;
+      setView(target);
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, [setView]);
+
+  React.useEffect(() => {
+    const prev = prevViewRef.current;
+    prevViewRef.current = currentView;
+    if (popNavRef.current) { popNavRef.current = false; return; }
+    if (prev === currentView) return;
+    const stateView = window.history.state && (window.history.state as any).view;
+    if (stateView === currentView) return;
+    const entry = { view: currentView };
+    const url = LEGAL_VIEWS.includes(currentView)
+      ? `#${currentView}`
+      : window.location.pathname + window.location.search;
+    if ((prev === 'status' && currentView === 'dashboard') || !stateView) {
+      window.history.replaceState(entry, '', url);
+    } else {
+      window.history.pushState(entry, '', url);
+    }
+  }, [currentView]);
 
   // Reset scroll position to top whenever navigating to another view
   React.useEffect(() => {

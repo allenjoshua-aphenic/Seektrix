@@ -1,5 +1,6 @@
 import React from 'react';
-import { SearchQuery, AppView } from '../types';
+import { SearchQuery, AppView, SearchMeta, MatchesReady } from '../types';
+import { searchApi } from '../api/client';
 import { ArrowLeft, HelpCircle, FileDown, Lock, Sparkles, CreditCard, Check, X, ShieldCheck, Landmark } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { jsPDF } from 'jspdf';
@@ -25,6 +26,10 @@ interface ResultRow {
   folioNumber: string;
   address: string;
   shares: number;
+  score: number;        // 0-100 from the server-side re-ranker
+  label: string;        // strong | likely | possible
+  reasons: string[];    // human-readable explanation of the match
+  financialYear: string;
 }
 
 export default function Dashboard({
@@ -143,63 +148,74 @@ export default function Dashboard({
 
   const [results, setResults] = React.useState<ResultRow[]>([]);
   const [isLoadingResults, setIsLoadingResults] = React.useState(false);
+  const [searchMeta, setSearchMeta] = React.useState<SearchMeta | null>(null);
 
   React.useEffect(() => {
     if (!latestSearch) {
       setResults([]);
+      setSearchMeta(null);
       return;
     }
 
-    let active = true;
-    const fetchRealData = async () => {
+    // One AbortController per report view: leaving the page or switching
+    // reports cancels the in-flight request so a stale answer never lands.
+    const controller = new AbortController();
+    let retryTimer: ReturnType<typeof setTimeout> | null = null;
+
+    const load = async () => {
       setIsLoadingResults(true);
-      try {
-        const response = await fetch(`/api/search/${latestSearch.id}/matches`);
-        if (!response.ok) throw new Error("API error");
-        const data = await response.json();
+      const res = await searchApi.getMatches(latestSearch.id, controller.signal);
+      if (res.aborted) return;
 
-        // Map real database rows only. Missing values render as N/A — never invented.
-        const mapped = data.map((item: any, idx: number) => {
-          const address = item.fullAddress || item.full_address || item.municipalRegion || item.municipal_region || '';
-          const statePart = (item.state || (address.split(',')[1] || '')).trim().toUpperCase() || 'N/A';
-          const name = item.holderName || item.holder_name || '';
-          return {
-            id: idx + 1,
-            investorName: name.toUpperCase(),
-            fatherName: item.fatherName || item.father_name || 'N/A',
-            company: (item.companyName || item.company_name || '').toUpperCase(),
-            state: statePart,
-            folioNumber: item.folioNumber || item.folio_number || 'N/A',
-            address: address.toUpperCase() || 'N/A',
-            shares: Number(item.shares ?? 0)
-          };
-        });
-
-        if (active) {
-          setResults(mapped);
-        }
-      } catch (err) {
-        console.error("[SEEKTRIX] Failed to fetch matches from the backend:", err);
-        if (active) {
-          setResults([]);
-          addToast(
-            'Search Service Unavailable',
-            'Could not load results from the registry server. Please run the search again.',
-            'error'
-          );
-        }
-      } finally {
-        if (active) {
-          setIsLoadingResults(false);
-        }
+      if (res.data && res.data.status === 'running') {
+        // HTTP 202: the server is still searching — ask again shortly.
+        retryTimer = setTimeout(load, 1500);
+        return;
       }
+
+      if (res.error || !res.data || res.data.status !== 'ready') {
+        setResults([]);
+        setSearchMeta(null);
+        setIsLoadingResults(false);
+        addToast(
+          'Search Service Unavailable',
+          res.error || 'Could not load results from the registry server. Please run the search again.',
+          'error'
+        );
+        return;
+      }
+
+      // Map real database rows only. Missing values render as N/A — never invented.
+      const ready = res.data as MatchesReady;
+      const mapped: ResultRow[] = ready.matches.map((item, idx) => {
+        const address = item.fullAddress || item.municipalRegion || '';
+        const statePart = (item.state || (address.split(',')[1] || '')).trim().toUpperCase() || 'N/A';
+        return {
+          id: idx + 1,
+          investorName: (item.holderName || '').toUpperCase(),
+          fatherName: item.fatherName || 'N/A',
+          company: (item.companyName || '').toUpperCase(),
+          state: statePart,
+          folioNumber: item.folioNumber || 'N/A',
+          address: address.toUpperCase() || 'N/A',
+          shares: Number(item.shares ?? 0),
+          score: item.matchedSimilarityScore,
+          label: item.matchLabel,
+          reasons: item.matchReasons || [],
+          financialYear: item.financialYear || ''
+        };
+      });
+      setResults(mapped);
+      setSearchMeta(ready.meta);
+      setIsLoadingResults(false);
     };
 
-    fetchRealData();
+    load();
     return () => {
-      active = false;
+      controller.abort();
+      if (retryTimer) clearTimeout(retryTimer);
     };
-  }, [latestSearch?.id, queryName, queryCity]);
+  }, [latestSearch?.id]);
 
   // Download single result PDF as an official recovery certificate
   const downloadSingleResultPDF = (row: ResultRow) => {
@@ -604,7 +620,8 @@ export default function Dashboard({
               Search Results
             </h1>
             <p className="text-xs text-gray-500 font-medium">
-              Matched records for <span className="font-bold text-cofounder-blue">{queryName}</span> in <span className="font-semibold">{queryCity} ({queryState})</span>
+              Matched records for <span className="font-bold text-cofounder-blue">{queryName}</span>{' '}
+              <span className="font-semibold">{queryState ? `in ${queryCity ? `${queryCity}, ` : ''}${queryState} (advanced search, narrowed to this state first)` : 'across all of India'}</span>
             </p>
           </div>
           
@@ -703,6 +720,32 @@ export default function Dashboard({
           </motion.div>
         )}
 
+        {/* Search engine summary — real numbers from the staged fuzzy search */}
+        {searchMeta && (
+          <div
+            className={`rounded-xl border px-4 py-3 text-xs font-sans flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 ${searchMeta.degraded ? 'bg-amber-50 border-amber-200 text-amber-900' : 'bg-slate-50 border-slate-200 text-slate-600'}`}
+            id="search-meta-banner"
+          >
+            <div className="space-y-1 min-w-0">
+              <p className="font-semibold">
+                {searchMeta.degraded
+                  ? `Partial results. ${searchMeta.degradedReason || 'One part of the search did not finish.'}`
+                  : `Searched the registries for "${searchMeta.normalizedQuery}"${searchMeta.stages.some((s) => s.state) ? ` in ${searchMeta.stages.find((s) => s.state)?.state} first` : ' across all of India'} · ${searchMeta.totalCandidates} candidate record${searchMeta.totalCandidates === 1 ? '' : 's'} checked in ${(searchMeta.tookMs / 1000).toFixed(1)} s`}
+              </p>
+              <details className="text-[11px] opacity-80">
+                <summary className="cursor-pointer select-none font-semibold">Technical details</summary>
+                <p className="mt-1 font-mono text-[10px] leading-relaxed break-words">
+                  engine {searchMeta.engine}{searchMeta.fromCache ? ' · cached' : ''}
+                  {searchMeta.degradedDetail ? ` · ${searchMeta.degradedDetail}` : ''}
+                  {' · '}
+                  {searchMeta.stages.map((s) => `${s.name}: ${s.rows} rows / ${s.ms} ms${s.error ? ` (${s.error})` : ''}`).join(' · ')}
+                  {searchMeta.removed.length > 0 && ` · ignored "${searchMeta.removed.join(' ')}"`}
+                </p>
+              </details>
+            </div>
+          </div>
+        )}
+
         {/* Results table card matches screenshot exactly but adds the required Columns */}
         <motion.div 
           className="bg-white rounded-xl border border-gray-150 shadow-[0_15px_40px_-5px_rgba(0,0,0,0.05)] overflow-hidden"
@@ -756,7 +799,24 @@ export default function Dashboard({
                       <tr key={row.id} className="hover:bg-slate-50/40 transition-colors">
                         <td className="py-4 px-6 text-center text-gray-400 font-medium">{row.id}</td>
                         <td className="py-4 px-6 font-bold text-dark-charcoal tracking-tight">
-                          {row.investorName}
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span>{row.investorName}</span>
+                            <span
+                              className={`inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-extrabold uppercase tracking-wide border ${
+                                row.label === 'strong' ? 'bg-emerald-50 border-emerald-200 text-emerald-700'
+                                : row.label === 'likely' ? 'bg-sky-50 border-sky-200 text-sky-700'
+                                : 'bg-amber-50 border-amber-200 text-amber-800'
+                              }`}
+                              title={row.reasons.join(' | ')}
+                            >
+                              {row.score}% {row.label}
+                            </span>
+                          </div>
+                          {row.reasons.length > 0 && (
+                            <p className="mt-1 text-[10px] font-medium text-gray-500 leading-relaxed max-w-[260px] whitespace-normal">
+                              {row.reasons.slice(0, 3).join(' · ')}
+                            </p>
+                          )}
                         </td>
                         <td className="py-4 px-6 text-gray-600 font-medium text-xs whitespace-normal max-w-[150px] leading-relaxed">
                           {row.fatherName || 'NA'}

@@ -1,0 +1,219 @@
+[
+  {
+    "company": "CRISIL Ltd",
+    "candidates": [
+      "https://www.crisil.com/content/dam/crisil/investors/dividends/unclaimed-dividends/unclaimed/2025/1.%20Unpaid%20Final%20Dividend%202024.xlsx",
+      "https://www.crisil.com/content/dam/crisil/investors/dividends/unclaimed-shares/list-of-shares-already-transferred.xlsx",
+      "https://www.crisil.com/content/dam/crisil/investors/dividends/unclaimed-dividends/unclaimed/2025/2.%20Unpaid%201st%20Interim%20Dividend%202025.xlsx",
+      "https://www.crisil.com/content/dam/crisil/investors/dividends/unclaimed-dividends/unclaimed/2025/3.%20Unpaid-2nd%20Interim%20Dividend%202025.xlsx"
+    ]
+  },
+  {
+    "company": "Hindustan Zinc Ltd",
+    "candidates": [
+      "https://www.hzlindia.com/uploads/Website_upload_efe290bb10.pdf",
+      "https://www.hzlindia.com/uploads/IEPF_7_march_23_15f7f4d148.pdf",
+      "https://www.hzlindia.com/uploads/IEPF_7_JAN_23_60801f8bcb.pdf",
+      "https://www.hzlindia.com/uploads/IEPF_7_Nov_22_dd7be614af.pdf"
+    ]
+  },
+  {
+    "company": "Raymond Ltd",
+    "candidates": [
+      "https://api.raymond.in/uploads/investor/1681296941278Shareholders%20Whose%20Shares%20Are%20Liable%20To%20Be%20Transferred%20To%20IEPF%20in%20FY%202022-23.pdf",
+      "https://api.raymond.in/uploads/investor/1681296153509Raymond%20Limited%20-%20shares%20to%20be%20transferred%20to%20the%20IEPF%20FY%2014-15%20onwards.pdf"
+    ]
+  },
+  {
+    "company": "Alkem Laboratories Ltd",
+    "candidates": [
+      "https://admin.alkemlabs.com/uploads/Interim_Dividend_FY_2017_2018_unpaid_data_f4f696d02a.pdf",
+      "https://admin.alkemlabs.com/uploads/Second_Interim_Dividend_2015_2016_a399287ae1.pdf",
+      "https://admin.alkemlabs.com/uploads/Interim_Dividend_2020_21_661c22cd61.pdf",
+      "https://admin.alkemlabs.com/uploads/Final_Dividend_19_20_30a78148ad.pdf"
+    ]
+  },
+  {
+    "company": "National Aluminium Co Ltd",
+    "candidates": [
+      "https://nalcoindia.com/wp-content/uploads/2026/05/Shares-transferred_to_IEPF.pdf",
+      "https://nalcoindia.com/wp-content/uploads/2025/05/Shares-Transferred-to-IEPF.pdf",
+      "https://nalcoindia.com/wp-content/uploads/2025/06/Shares-to-be-Transferred-to-IEPF1718Final.pdf",
+      "https://nalcoindia.com/wp-content/uploads/2025/12/shares-to-be-transferred-to-IEPF.pdf"
+    ]
+  },
+  {
+    "company": "Ipca Laboratories Ltd",
+    "candidates": [
+      "https://www.ipca.com/wp-content/pdf/financials/shareholders-for-iepf-suspense-ac/list-of-shareholders-for-IEPF-suspense-ac-dec-2021.pdf",
+      "https://www.ipca.com/wp-content/pdf/financials/shareholders-for-iepf-suspense-ac/list-of-shareholders-for-IEPF-suspense-ac.pdf",
+      "https://www.ipcalabs.com/wp-content/pdf/financials/shareholders-for-iepf-suspense-ac/list-of-shareholders-for-IEPF-suspense-ac-dec-2021.pdf"
+    ]
+  },
+  {
+    "company": "Aurobindo Pharma Ltd",
+    "candidates": [
+      "https://www.aurobindo.com/api/uploads/unpaiddividendaccountdetails/APLN_UNPAID%20DIVIDEND%20REGISTER%20FOR%20INTERIM%20DIV%202025-26%20AS%20ON%2025.11.2025.pdf",
+      "https://www.aurobindo.com/api/uploads/unpaiddividendaccountdetails/APLN-IEPF-2-DATA.pdf",
+      "https://www.aurobindo.com/api/uploads/unpaiddividendaccountdetails/APLN_FORM-IEPF-2_FY1-FY2.pdf",
+      "https://www.aurobindo.com/api/uploads/unpaiddividendaccountdetails/APLN_4-2021-22.pdf"
+    ]
+  },
+  {
+    "company": "Manappuram Finance Ltd",
+    "candidates": [
+      "https://www.manappuram.com/sites/default/files/2025-05/Manappuram_1st_INT_2024-25_Unpaid_31032025.xls",
+      "https://www.manappuram.com/sites/default/files/2026-04/Manappuram4thIntDiv2024-25_V3_IEPF-1_purpose-2%281%29.xls",
+      "https://www.manappuram.com/sites/default/files/2025-05/Manappuram_2nd_INT_2024-25_Unpaid_31032025.xls",
+      "https://www.manappuram.com/sites/default/files/2025-05/Manappuram_3rd_INT_2024-25_Unpaid_31032025.xls"
+    ]
+  },
+  {
+    "company": "Lupin Ltd",
+    "candidates": [
+      "https://www.lupin.com/unclaimed-dividend-and-shares/List%20of%20shareholders%20whose%20dividend%20remains%20unpaid%20for%20financial%20year%202024-2025.pdf",
+      "https://www.lupin.com/investors/unclaimed-dividend/",
+      "https://www.lupin.com/unclaimed-dividend-and-shares/Newspaper%20publication%20for%20Transfer%20of%20Dividend%20and%20Equity%20Shares%20to%20IEPF.pdf"
+    ]
+  },
+  {
+    "company": "Timken India Ltd",
+    "candidates": [
+      "https://www.timken.com/wp-content/uploads/2026/01/List-of-Unpaid-Dividend-FY-2024-25.pdf",
+      "https://www.timken.com/wp-content/uploads/2024/11/Unclaimed-Dividend-Transferred-to-IEPF_2016-17.pdf",
+      "https://www.timken.com/wp-content/uploads/2025/07/List-of-Unpaid-Dividend-FY-2023-24.pdf",
+      "https://www.timken.com/wp-content/uploads/2025/07/List-of-Unpaid-Dividend-FY-2022-23.pdf"
+    ]
+  },
+  {
+    "company": "MOIL Ltd",
+    "candidates": [
+      "https://backend.moil.nic.in/getFiles/public/document/6a314302a0-Statement_of_Unpaid_Unclaimed_2_Interim_Dividend_2025-26_as_on_08.03.2026.pdf",
+      "https://backend.moil.nic.in/getFiles/public/document/d69c629c81-Unpaid_Unclaimed_1_Interim_Dividend_2025-26_as_on_181225.pdf",
+      "https://backend.moil.nic.in/getFiles/public/document/k6a322be41-Statement%20of%20Shareholder%20whose%20shares%20have%20been%20transferred%20to%20IEPF%20Suspense%20Account%20due%20to%20non%20claiming%20of%20Interim%20Dividend%202018-19%20onwards.pdf",
+      "https://backend.moil.nic.in/getFiles/public/document/69c629ebf0-Unpaid_Unclaimed_Final_Dividend_2024-25_as_on_051125.pdf"
+    ]
+  },
+  {
+    "company": "NMDC Ltd",
+    "candidates": [
+      "https://www.nmdc.co.in/cms-admin/Upload/Dividends_Document/10658c863ffc41c6b2d751b872b62fa4_20260704170622109.pdf",
+      "https://www.nmdc.co.in/cms-admin/Upload/Dividends_Document/89900cdbed984c1b954b3aa5b7deec86_20260131111350206.pdf",
+      "https://www.nmdc.co.in/cms-admin/Upload/Dividends_Document/5046cf77da894af2841036e406d08fa3_20260131111312936.pdf",
+      "https://www.nmdc.co.in/cms-admin/Upload/Dividends_Document/3f5b693a91d94f74ac01698fc6ec4e74_20210917110051943.pdf"
+    ]
+  },
+  {
+    "company": "Kirloskar Brothers Ltd",
+    "candidates": [
+      "https://www.kirloskarpumps.com/wp-content/uploads/2025/12/List-of-unclaimed-dividend-31032025.pdf",
+      "https://www.kirloskarpumps.com/wp-content/uploads/2025/05/List-of-shareholders-shares-due-for-transfer-to-IEPF.pdf",
+      "https://www.kirloskarpumps.com/wp-content/uploads/2024/10/List-of-Unclaimed-dividend_31.03.2024.pdf",
+      "https://www.kirloskarpumps.com/wp-content/uploads/2024/05/List-of-shareholders-IEPF-transfer-due.pdf"
+    ]
+  },
+  {
+    "company": "Exide Industries Ltd",
+    "candidates": [
+      "https://docs.exideindustries.com/pdf/unclaimed-dividends/2022-23/2022-23-final.xls",
+      "https://docs.exideindustries.com/pdf/list-of-iepf.pdf",
+      "https://docs.exideindustries.com/pdf/shareholders-list-transferred-to-iepf.pdf",
+      "https://docs.exideindustries.com/pdf/unclaimed-dividends/2021-22/2021-22-interim.xls"
+    ]
+  },
+  {
+    "company": "SKF India Ltd",
+    "candidates": [
+      "https://cdn.skfmediahub.skf.com/api/public/094ecab00f682cfe/pdf_preview_medium/094ecab00f682cfe_pdf_preview_medium.pdf",
+      "https://cdn.skfmediahub.skf.com/api/public/09b336a976108445/pdf_preview_medium/Outstanding_Dividend_for_7_Consecutive_Years_from_2019_to_2025_pdf_preview_medium.pdf",
+      "https://cdn.skfmediahub.skf.com/api/public/090cd6ecdbbb3743/pdf_preview_medium/090cd6ecdbbb3743_pdf_preview_medium.pdf",
+      "https://cdn.skfmediahub.skf.com/api/public/0901d19680975323/pdf_preview_medium/0901d19680975323_pdf_preview_medium.pdf"
+    ]
+  },
+  {
+    "company": "Kalpataru Projects International Ltd",
+    "candidates": [
+      "https://kalpataruprojects.com/api/view-file/Form_IEPF-2-Final-23.xls",
+      "https://www.kalpataruprojects.com/investors/corporate-governance/unclaimed-unpaid-dividend"
+    ]
+  },
+  {
+    "company": "KEC International Ltd",
+    "candidates": [
+      "https://www.kecrpg.com/media/investorEducationMedia/Unpaid%20Dividend%202023-24.xlsx",
+      "https://www.kecrpg.com/media/investorEducationMedia/Unpaid%20Dividend%202022-23.xlsx",
+      "https://www.kecrpg.com/media/investorEducationMedia/Unpaid%20Dividend%202021-22.xlsx",
+      "https://www.kecrpg.com/media/investorEducationMedia/Unpaid%20Dividend%202020-21.xlsx"
+    ]
+  },
+  {
+    "company": "Vedanta Ltd",
+    "candidates": [
+      "https://www.vedantaresources.com/uploads/shareholder-information/unclaimed_dividend/Vedanta-1st-Interim-Dividend-2023-24-unpaid-list.pdf",
+      "https://www.vedantaresources.com/uploads/shareholder-information/unclaimed_dividend/VEDL-unpaid-dividend-4th-Interim-Dividend-2022-23.pdf",
+      "https://www.vedantaresources.com/uploads/shareholder-information/unclaimed_dividend/vedanta-5th-interim-dividend-2022-23-unpaid.pdf",
+      "https://www.vedantaresources.com/uploads/shareholder-information/unclaimed_dividend/VEDL-unpaid-2nd-interim-dividend-2022-23.pdf"
+    ]
+  },
+  {
+    "company": "NCC Ltd",
+    "candidates": [
+      "https://ncclimited.com/unpaid-dividend/NCCL_V3_IEPF-2_2026_F.pdf",
+      "https://ncclimited.com/unpaid-dividend/NCCL_V3_IEPF-2_2025_F.pdf",
+      "https://ncclimited.com/dividend/NCCL%20Form%20IEPF-2%202020%20Data.pdf",
+      "https://ncclimited.com/sharesdue-transfer-IEPF/Unclaimed%20Shares%20Transfered%20to%20IEPF.pdf"
+    ]
+  },
+  {
+    "company": "Arvind Ltd",
+    "candidates": [
+      "https://www.arvind.com/sites/default/files/shareholders_corner/Arvind%20Ltd_IEPF-2_Div-2022-2023.xlsm",
+      "https://www.arvind.com/sites/default/files/shareholders_corner/Arvind%20Ltd_IEPF-2_Div-2018-2019.xlsm",
+      "https://www.arvind.com/sites/default/files/shareholders_corner/ARVIND_LTD_Form_IEPF-2-2017-2018.xls",
+      "https://www.arvind.com/sites/default/files/shareholders_corner/ARVIND_LTD_Form_IEPF-2-2016-2017.xls"
+    ]
+  },
+  {
+    "company": "Amara Raja Energy and Mobility Ltd",
+    "candidates": [
+      "https://www.amararajaeandm.com/Files/Unclaimed%20Dividend%20Sheet%20as%20on%20March%2031,%202026.xlsx",
+      "https://www.amararajaeandm.com/Files/Unclaimed%20Dividend%20Sheet%20as%20on%20March%2031,%202024.xlsx",
+      "https://www.amararajaeandm.com/Files/Unclaimed%20Dividend%20Sheet%20as%20on%20March%2031,%202023.xlsx",
+      "https://www.amararajaeandm.com/Files/Unclaimed%20Dividend%20as%20March%2031%20of%20every%20year%20as%20Unclaimed%20Dividend%20as%20on%20March%2031,%202022%20-%20Final.xlsx"
+    ]
+  },
+  {
+    "company": "Century Textiles and Industries Ltd",
+    "candidates": [
+      "https://www.adityabirlarealestate.com/abrelcms/uploads/stateofunclaimedorunpaiddividend/stateofunclaimedorunpaiddividend_1758279505.pdf",
+      "https://www.adityabirlarealestate.com/abrelcms/uploads/investoreducationprotectionfundlink/statementofsharestransferredtoiepf_1746169900.pdf",
+      "https://www.adityabirlarealestate.com/abrelcms/uploads/stateofunclaimedorunpaiddividend/stateofunclaimedorunpaiddividend_1736754042.pdf",
+      "https://www.adityabirlarealestate.com/abrelcms/uploads/stateofunclaimedorunpaiddividend/stateofunclaimedorunpaiddividend_1736753999.pdf"
+    ]
+  },
+  {
+    "company": "EIH Ltd",
+    "candidates": [
+      "https://www.eihltd.com/-/media/eihltd/pdf-files/unclaimed-divident/unclaimed-dividend-all1.pdf",
+      "https://www.eihltd.com/-/media/eihltd/pdf-files/unclaimed-divident/unclaimed-dividend-all.pdf",
+      "https://www.eihltd.com/-/media/assets/eihltd/pdf-files/unclaimed-divident/eih-ltd_iepfpendingrefister20052025_042923.pdf",
+      "https://www.eihltd.com/-/media/eihltd/pdf-files/unclaimed-divident/unclaimed-dividend-for-fy-23-24.pdf"
+    ]
+  },
+  {
+    "company": "Zydus Lifesciences Ltd",
+    "candidates": [
+      "https://www.zyduslife.com/investor/admin/uploads/18/99/Statement-of-Unclaimed-Dividend-account-March-31--2023.pdf",
+      "https://www.zyduslife.com/public/pdf/financial/Details-of-unclaimed-dividend-and-underlying-shares-as-on-March-31-2020.pdf",
+      "https://www.zyduslife.com/public/pdf/financial/List-of-unclaimed-dividend-of-last-seven-years-31-03-2019.pdf",
+      "https://www.zyduslife.com/public/pdf/financial/Details-of-shareholders-whose-dividend-for-the-year-2022-paid-to-IEPF.pdf"
+    ]
+  },
+  {
+    "company": "UNO Minda Ltd",
+    "candidates": [
+      "http://web.archive.org/web/20201022114926id_/https://www.unominda.com/images/Corporate_governance/Corporate_Governance_Policies/Yearwise-unclaimed-dividend-details-as-at-30-09-2015.pdf",
+      "http://web.archive.org/web/20170618041221id_/http://unominda.com/images/pdf/Yearwise%20unclaimed%20dividend%20details%20as%20at%2030%2009%202015.pdf"
+    ]
+  }
+]

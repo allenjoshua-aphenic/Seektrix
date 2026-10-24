@@ -1,62 +1,81 @@
-// hi this is the client side api for the search pipeline. It connects to the local express/fastapi backend server and handles the search submission and status polling.
-import { SearchQuery, UnclaimedAsset, PipelineStep, PipelineLog } from '../types';
+/**
+ * Browser-side API client for the Seektrix search pipeline.
+ *
+ * Every call accepts an optional AbortSignal so React components can cancel
+ * stale requests (debounced type-ahead, unmounted dashboards, superseded
+ * polls). Cancelled requests resolve with `aborted: true` instead of throwing.
+ */
+import { SearchQuery, PipelineStep, PipelineLog, MatchesResponse, SuggestResponse } from '../types';
 
-const API_BASE_URL = (import.meta as any).env?.VITE_API_URL || '';
+// When the frontend is hosted separately (Vercel) point this at the Render backend.
+const API_BASE_URL = ((import.meta as any).env?.VITE_API_URL || '').replace(/\/+$/, '');
 
 export interface ApiResponse<T> {
   data: T | null;
   error: string | null;
   status: number;
+  /** True when the request was cancelled through its AbortSignal. */
+  aborted?: boolean;
+}
+
+export interface StatusResponse {
+  id: string;
+  status: PipelineStep;
+  progressPercent: number;
+  estimatedCompletionMinutes: number;
+  matchedCount: number;
+  totalMatchedValue: number;
+  confidenceScore: number;
+  logs: PipelineLog[];
+  engine?: string;
+  degraded?: boolean;
+  degradedReason?: string;
+}
+
+async function request<T>(path: string, init: RequestInit = {}, signal?: AbortSignal): Promise<ApiResponse<T>> {
+  try {
+    const response = await fetch(`${API_BASE_URL}${path}`, { ...init, signal });
+    let body: any = null;
+    try { body = await response.json(); } catch { body = null; }
+    if (!response.ok && response.status !== 202) {
+      const message = body?.error || `Gateway error (${response.status})`;
+      return { data: null, error: message, status: response.status };
+    }
+    return { data: body as T, error: null, status: response.status };
+  } catch (err: any) {
+    if (err?.name === 'AbortError' || signal?.aborted) {
+      return { data: null, error: null, status: 0, aborted: true };
+    }
+    return { data: null, error: err?.message || 'Network error while contacting the search server.', status: 502 };
+  }
 }
 
 export const searchApi = {
-  /**
-   * Submits a search parameters query to the index compliance pipeline.
-   * Connects to the local Express/FastAPI backend server.
-   */
-  async submitSearch(fullName: string, city: string, email: string): Promise<ApiResponse<SearchQuery>> {
-    // Basic compliance check validation for input
-    if (!fullName.trim() || !city.trim() || !email.trim()) {
-      return {
-        data: null,
-        error: 'Invalid parameters. Target name, city scope, and secure contact email are mandatory.',
-        status: 400
-      };
+  /** Submit a full search. The server starts working immediately and returns the job. */
+  async submitSearch(fullName: string, city: string, email: string, state = '', signal?: AbortSignal): Promise<ApiResponse<SearchQuery>> {
+    if (!fullName.trim() && !email.trim()) {
+      return { data: null, error: 'Enter your full name or your email address to search. State and city are optional.', status: 400 };
     }
-
-    try {
-      const response = await fetch('/api/search', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ fullName, city, email })
-      });
-      if (!response.ok) throw new Error(`Gateway Error (${response.status})`);
-      const data = await response.json();
-      return { data, error: null, status: response.status };
-    } catch (err: any) {
-      return { data: null, error: err.message || 'Error executing secure search submission.', status: 502 };
-    }
+    return request<SearchQuery>('/api/search', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ fullName: fullName.trim(), city: city.trim(), email: email.trim(), state: state.trim() }),
+    }, signal);
   },
 
-  /**
-   * Fetches the current status of an active search pipeline.
-   * Returns full query data including matchedCount and totalMatchedValue.
-   */
-  async getStatus(id: string, progress: number): Promise<ApiResponse<{ 
-    progressPercent: number; 
-    status: PipelineStep; 
-    logs: PipelineLog[];
-    matchedCount: number;
-    totalMatchedValue: number;
-    confidenceScore: number;
-  }>> {
-    try {
-      const response = await fetch(`/api/search/${id}/status`);
-      if (!response.ok) throw new Error(`Gateway status poll failed (${response.status})`);
-      const data = await response.json();
-      return { data, error: null, status: response.status };
-    } catch (err: any) {
-      return { data: null, error: err.message, status: 500 };
-    }
-  }
+  /** Poll a running job. */
+  async getStatus(id: string, signal?: AbortSignal): Promise<ApiResponse<StatusResponse>> {
+    return request<StatusResponse>(`/api/search/${encodeURIComponent(id)}/status`, {}, signal);
+  },
+
+  /** Fetch the ranked matches. HTTP 202 means the job is still running. */
+  async getMatches(id: string, signal?: AbortSignal): Promise<ApiResponse<MatchesResponse>> {
+    return request<MatchesResponse>(`/api/search/${encodeURIComponent(id)}/matches`, {}, signal);
+  },
+
+  /** Type-ahead preview. Always pass the AbortSignal so superseded keystrokes are cancelled. */
+  async suggest(name: string, state: string, signal?: AbortSignal): Promise<ApiResponse<SuggestResponse>> {
+    const params = new URLSearchParams({ name: name.trim(), state: state.trim() });
+    return request<SuggestResponse>(`/api/suggest?${params.toString()}`, {}, signal);
+  },
 };

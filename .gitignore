@@ -22,3 +22,6 @@ Thumbs.db
 
 # AI Studio leftovers
 assets/.aistudio/
+
+# Personal coding-practice output (not part of the app)
+coding-solutions/

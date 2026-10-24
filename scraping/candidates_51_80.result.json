@@ -1,0 +1,355 @@
+[
+  {
+    "company": "Bharat Heavy Electricals Ltd",
+    "saved": {
+      "file": "Bharat Heavy Electricals Ltd - Unclaimed Assets.xls",
+      "ext": ".xls",
+      "records_est": 960,
+      "kb": 7413,
+      "url": "https://www.bhel.com/sites/default/files/2025-09/Unpaid-dividend-wrt.-Final-dividend-2017-18.xls"
+    },
+    "detail": [
+      "OK [.xls] (960 distinct names, 0 demat IDs, 830 folio tokens): https://www.bhel.com/sites/default/files/2025-09/Unpaid-dividend-wrt.-Final-dividend-2017-18.xls"
+    ]
+  },
+  {
+    "company": "Steel Authority of India Ltd",
+    "saved": null,
+    "detail": [
+      "unreachable: https://sail.co.in/sites/default/files/2026-05/Unpaid%20Dividends%20FY%202018-19%20to%20FY%202024-25.xlsx",
+      "unreachable: https://www.sail.co.in/sites/default/files/2021-12/SAIL-Share-Transfer-to-IEPF-due-in-March-2022.pdf"
+    ]
+  },
+  {
+    "company": "Indian Oil Corporation Ltd",
+    "saved": {
+      "file": "Indian Oil Corporation Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 1129,
+      "kb": 656,
+      "url": "https://iocl.com/download/IEPF-share-transfer-data-(2017-10-31).pdf"
+    },
+    "detail": [
+      "OK [.pdf] (1129 distinct names, 0 demat IDs, 1085 folio tokens): https://iocl.com/download/IEPF-share-transfer-data-(2017-10-31).pdf"
+    ]
+  },
+  {
+    "company": "Bharat Electronics Ltd",
+    "saved": null,
+    "detail": [
+      "unreachable: https://bel-india.in/wp-content/uploads/2026/06/List-of-Equity-shares-to-be-transferred-to-IEPF-Authority_Final-Dividend-2018-19.pdf"
+    ]
+  },
+  {
+    "company": "Godrej Consumer Products Ltd",
+    "saved": {
+      "file": "Godrej Consumer Products Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 2753,
+      "kb": 4662,
+      "url": "https://www.godrejindiasaarc.com/public/uploads/compliance/Detailsofshareholdersforwebsiteupload.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (2753 distinct names, 0 demat IDs, 2692 folio tokens): https://www.godrejindiasaarc.com/public/uploads/compliance/Detailsofshareholdersforwebsiteupload.pdf"
+    ]
+  },
+  {
+    "company": "Pidilite Industries Ltd",
+    "saved": {
+      "file": "Pidilite Industries Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 1866,
+      "kb": 425,
+      "url": "https://www.pidilite.com/content/dam/pidilitecorporatewebsite/corporate-governance/unclaimed-dividends-iepf/fy-2025-26/unclaimed-dividend-financial-year-2024-2025.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (1866 distinct names, 241 demat IDs, 1544 folio tokens): https://www.pidilite.com/content/dam/pidilitecorporatewebsite/corporate-governance/unclaimed-dividends-iepf/fy-2025-26/unclaimed-dividend-financial-year-2024-2025.pdf"
+    ]
+  },
+  {
+    "company": "Havells India Ltd",
+    "saved": {
+      "file": "Havells India Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 78,
+      "kb": 71,
+      "url": "https://havells.com/media/wysiwyg/PDF/Unclaimed-Dividend/2026-2027/Underlying_Shares_of_unclaimed_Dividend_of_2018_19_Due_date_of_transfer_of_Dividend_to_IEPF_-_31st_August_2026_.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (78 distinct names, 10 demat IDs, 110 folio tokens): https://havells.com/media/wysiwyg/PDF/Unclaimed-Dividend/2026-2027/Underlying_Shares_of_unclaimed_Dividend_of_2018_19_Due_date_of_transfer_of_Dividend_to_IEPF_-_31st_August_2026_.pdf"
+    ]
+  },
+  {
+    "company": "Torrent Pharmaceuticals Ltd",
+    "saved": {
+      "file": "Torrent Pharmaceuticals Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 4457,
+      "kb": 1077,
+      "url": "https://www.torrentpharma.com/pdf/investors/List_of_shareholders_whose_Interim_Dividend_remained_unclaimed_unpaid.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (4457 distinct names, 138 demat IDs, 3056 folio tokens): https://www.torrentpharma.com/pdf/investors/List_of_shareholders_whose_Interim_Dividend_remained_unclaimed_unpaid.pdf"
+    ]
+  },
+  {
+    "company": "Dabur India Ltd",
+    "saved": {
+      "file": "Dabur India Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 142,
+      "kb": 438,
+      "url": "https://www.dabur.com/Investors/Investor%20Information/Unclaimed%20Dividend/Details%20of%20shares%20proposed%20to%20be%20transferred%20to%20IEPF/List%20of%20cases%20liable%20to%20be%20transferred%20to%20IEPF%20New.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (142 distinct names, 0 demat IDs, 55 folio tokens): https://www.dabur.com/Investors/Investor%20Information/Unclaimed%20Dividend/Details%20of%20shares%20proposed%20to%20be%20transferred%20to%20IEPF/List%20of%20cases%20liable%20to%20be%20transferred%20to%20IEPF%20New.pdf"
+    ]
+  },
+  {
+    "company": "Colgate-Palmolive India Ltd",
+    "saved": {
+      "file": "Colgate-Palmolive India Ltd - Unclaimed Assets.xlsx",
+      "ext": ".xlsx",
+      "records_est": 1440,
+      "kb": 1534,
+      "url": "https://www.colgateinvestors.co.in/documents/unclaimed-dividends/2nd-interim-div-2018-19.xlsm"
+    },
+    "detail": [
+      "OK [.xlsx] (1440 distinct names, 0 demat IDs, 476 folio tokens): https://www.colgateinvestors.co.in/documents/unclaimed-dividends/2nd-interim-div-2018-19.xlsm"
+    ]
+  },
+  {
+    "company": "Marico Ltd",
+    "saved": {
+      "file": "Marico Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 282,
+      "kb": 489,
+      "url": "https://marico.com/investorspdf/List_of_equity_shares_liable_to_be_transferred_to_Demat_Account_of_IEPF_Authority.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (282 distinct names, 65 demat IDs, 183 folio tokens): https://marico.com/investorspdf/List_of_equity_shares_liable_to_be_transferred_to_Demat_Account_of_IEPF_Authority.pdf"
+    ]
+  },
+  {
+    "company": "Bosch Ltd",
+    "saved": {
+      "file": "Bosch Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 3215,
+      "kb": 2487,
+      "url": "https://www.bosch.in/media/our_company/shareholder_information/2024/unpaidyear2024.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (3215 distinct names, 504 demat IDs, 3334 folio tokens): https://www.bosch.in/media/our_company/shareholder_information/2024/unpaidyear2024.pdf"
+    ]
+  },
+  {
+    "company": "Siemens Ltd",
+    "saved": {
+      "file": "Siemens Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 172,
+      "kb": 157,
+      "url": "https://assets.new.siemens.com/siemens/assets/api/uuid:11fb55ce-f213-495d-b324-2112421d5ad1/List-of-shareholders-identified-for-transfer-to-IEPF-March-2026.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (172 distinct names, 41 demat IDs, 229 folio tokens): https://assets.new.siemens.com/siemens/assets/api/uuid:11fb55ce-f213-495d-b324-2112421d5ad1/List-of-shareholders-identified-for-transfer-to-IEPF-March-2026.pdf"
+    ]
+  },
+  {
+    "company": "3M India Ltd",
+    "saved": {
+      "file": "3M India Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 1654,
+      "kb": 765,
+      "url": "https://multimedia.3m.com/mws/media/2589096O/3m-india-statement-unpaid-unclaimed-dividend-37th-agm-march-31-2025.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (1654 distinct names, 9 demat IDs, 1285 folio tokens): https://multimedia.3m.com/mws/media/2589096O/3m-india-statement-unpaid-unclaimed-dividend-37th-agm-march-31-2025.pdf"
+    ]
+  },
+  {
+    "company": "Cummins India Ltd",
+    "saved": {
+      "file": "Cummins India Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 4085,
+      "kb": 11379,
+      "url": "https://www.cummins.com/sites/default/files/2021-11/Cummins%20India%20Limited%20-%20Combined%20Unpaid%20Data%20as%20of%2031-03-2021.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (4085 distinct names, 0 demat IDs, 3163 folio tokens): https://www.cummins.com/sites/default/files/2021-11/Cummins%20India%20Limited%20-%20Combined%20Unpaid%20Data%20as%20of%2031-03-2021.pdf"
+    ]
+  },
+  {
+    "company": "Mphasis Ltd",
+    "saved": {
+      "file": "Mphasis Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 54,
+      "kb": 132,
+      "url": "https://www.mphasis.com/content/dam/mphasis-com/global/en/investors/governance/shareholders-whose-dividend-remained-unpaid-for-seven-consecutive-years-as-at-31-march-2026.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (54 distinct names, 15 demat IDs, 50 folio tokens): https://www.mphasis.com/content/dam/mphasis-com/global/en/investors/governance/shareholders-whose-dividend-remained-unpaid-for-seven-consecutive-years-as-at-31-march-2026.pdf"
+    ]
+  },
+  {
+    "company": "Persistent Systems Ltd",
+    "saved": {
+      "file": "Persistent Systems Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 4906,
+      "kb": 4129,
+      "url": "https://www.persistent.com/wp-content/uploads/2026/07/Consolidated-Unclaimed-Dividend-as-on-July-21-2025.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (4422 distinct names, 0 demat IDs, 9813 folio tokens): https://www.persistent.com/wp-content/uploads/2026/07/Consolidated-Unclaimed-Dividend-as-on-July-21-2025.pdf"
+    ]
+  },
+  {
+    "company": "Tata Power Company Ltd",
+    "saved": {
+      "file": "Tata Power Company Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 18948,
+      "kb": 982,
+      "url": "https://web.archive.org/web/20240429220156id_/https://www.tatapower.com/pdf/investor-relations/IEPF-unencashed-dividend.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (11961 distinct names, 92 demat IDs, 37896 folio tokens): https://web.archive.org/web/20240429220156id_/https://www.tatapower.com/pdf/investor-relations/IEPF-unencashed-dividend.pdf"
+    ]
+  },
+  {
+    "company": "ACC Ltd",
+    "saved": {
+      "file": "ACC Ltd - Unclaimed Assets.xlsx",
+      "ext": ".xlsx",
+      "records_est": 1029,
+      "kb": 1031,
+      "url": "https://web.archive.org/web/20170724065508id_/http://www.acclimited.com/assets/new/pdf/unclaimed_dividends/Details-of-Unclaimed-78th-Final-Dividend-for-the-year-ended-31.12.2015-2.8.2016.xlsx"
+    },
+    "detail": [
+      "OK [.xlsx] (1029 distinct names, 0 demat IDs, 1169 folio tokens): https://web.archive.org/web/20170724065508id_/http://www.acclimited.com/assets/new/pdf/unclaimed_dividends/Details-of-Unclaimed-78th-Final-Dividend-for-the-year-ended-31.12.2015-2.8.2016.xlsx"
+    ]
+  },
+  {
+    "company": "Ambuja Cements Ltd",
+    "saved": {
+      "file": "Ambuja Cements Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 2425,
+      "kb": 244,
+      "url": "https://www.ambujagroup.com/documents/dividend-iepf/details-of-dividend-and-shares-transferred-to-iepf/details-of-dividend-shares-transferred-to-iepf-2024.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (2224 distinct names, 0 demat IDs, 4851 folio tokens): https://www.ambujagroup.com/documents/dividend-iepf/details-of-dividend-and-shares-transferred-to-iepf/details-of-dividend-shares-transferred-to-iepf-2024.pdf"
+    ]
+  },
+  {
+    "company": "The Ramco Cements Ltd",
+    "saved": {
+      "file": "The Ramco Cements Ltd - Unclaimed Assets.xlsx",
+      "ext": ".xlsx",
+      "records_est": 1322,
+      "kb": 675,
+      "url": "https://ramcocements.in/cms/uploads/20253480_IEPF_2_0e290cf9bf.xlsm"
+    },
+    "detail": [
+      "OK [.xlsx] (1322 distinct names, 0 demat IDs, 1008 folio tokens): https://ramcocements.in/cms/uploads/20253480_IEPF_2_0e290cf9bf.xlsm"
+    ]
+  },
+  {
+    "company": "Shree Cement Ltd",
+    "saved": {
+      "file": "Shree Cement Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 788,
+      "kb": 58,
+      "url": "https://www.shreecement.com/uploads/investors/shareholder/shares-transfer-to-iepf-november-2017.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (788 distinct names, 6 demat IDs, 725 folio tokens): https://www.shreecement.com/uploads/investors/shareholder/shares-transfer-to-iepf-november-2017.pdf"
+    ]
+  },
+  {
+    "company": "Dalmia Bharat Ltd",
+    "saved": {
+      "file": "Dalmia Bharat Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 1922,
+      "kb": 846,
+      "url": "https://www.dalmiacement.com/assets/IEPF_NoticePublication/Shares-transferred-to-IEPF-Account-in-2019.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (1922 distinct names, 43 demat IDs, 2337 folio tokens): https://www.dalmiacement.com/assets/IEPF_NoticePublication/Shares-transferred-to-IEPF-Account-in-2019.pdf"
+    ]
+  },
+  {
+    "company": "Punjab National Bank",
+    "saved": {
+      "file": "Punjab National Bank - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 3251,
+      "kb": 3669,
+      "url": "https://pnb.bank.in/document/dividend/Unclaimed_Dividend_2005-06(I).pdf"
+    },
+    "detail": [
+      "OK [.pdf] (3251 distinct names, 1084 demat IDs, 2232 folio tokens): https://pnb.bank.in/document/dividend/Unclaimed_Dividend_2005-06(I).pdf"
+    ]
+  },
+  {
+    "company": "Bank of Baroda",
+    "saved": {
+      "file": "Bank of Baroda - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 4623,
+      "kb": 5236,
+      "url": "https://bankofbaroda.bank.in/-/media/Project/BOB/CountryWebsites/India/pdfs2/2025/25-09/BOB-IEPF-1-2016-2017"
+    },
+    "detail": [
+      "OK [.pdf] (4623 distinct names, 0 demat IDs, 4808 folio tokens): https://bankofbaroda.bank.in/-/media/Project/BOB/CountryWebsites/India/pdfs2/2025/25-09/BOB-IEPF-1-2016-2017"
+    ]
+  },
+  {
+    "company": "Bank of India",
+    "saved": {
+      "file": "Bank of India - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 1865,
+      "kb": 2871,
+      "url": "https://bankofindia.bank.in/documents/20121/0/List_of_Unclaimed_Shares_Transfer_to_IEPF.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (1865 distinct names, 0 demat IDs, 2037 folio tokens): https://bankofindia.bank.in/documents/20121/0/List_of_Unclaimed_Shares_Transfer_to_IEPF.pdf"
+    ]
+  },
+  {
+    "company": "Canara Bank",
+    "saved": {
+      "file": "Canara Bank - Unclaimed Assets.xlsx",
+      "ext": ".xlsx",
+      "records_est": 4513,
+      "kb": 22805,
+      "url": "https://www.canarabank.bank.in/documents/d/guest/unpaid-dividend-data-for-fy-2022-23-19092023-1-"
+    },
+    "detail": [
+      "OK [.xlsx] (4513 distinct names, 0 demat IDs, 3885 folio tokens): https://www.canarabank.bank.in/documents/d/guest/unpaid-dividend-data-for-fy-2022-23-19092023-1-"
+    ]
+  },
+  {
+    "company": "ABB India Ltd",
+    "saved": {
+      "file": "ABB India Ltd - Unclaimed Assets.xls",
+      "ext": ".xls",
+      "records_est": 1099,
+      "kb": 1583,
+      "url": "https://web.archive.org/web/20240309112751id_/https://new.abb.com/docs/librariesprovider19/default-document-library/unclaimed-dividend-2017.xls?sfvrsn=b3a75617_2"
+    },
+    "detail": [
+      "OK [.xls] (1099 distinct names, 0 demat IDs, 582 folio tokens): https://web.archive.org/web/20240309112751id_/https://new.abb.com/docs/librariesprovider19/default-document-library/unclaimed-dividend-2017.xls?sfvrsn=b3a75617_2"
+    ]
+  }
+]

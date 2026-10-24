@@ -1,0 +1,327 @@
+[
+  {
+    "company": "CRISIL Ltd",
+    "saved": {
+      "file": "CRISIL Ltd - Unclaimed Assets.xlsx",
+      "ext": ".xlsx",
+      "records_est": 1020,
+      "kb": 50,
+      "url": "https://www.crisil.com/content/dam/crisil/investors/dividends/unclaimed-dividends/unclaimed/2025/1.%20Unpaid%20Final%20Dividend%202024.xlsx"
+    },
+    "detail": [
+      "OK [.xlsx] (1020 distinct names, 0 demat IDs, 1101 folio tokens): https://www.crisil.com/content/dam/crisil/investors/dividends/unclaimed-dividends/unclaimed/2025/1.%20Unpaid%20Final%20Dividend%202024.xlsx"
+    ]
+  },
+  {
+    "company": "Hindustan Zinc Ltd",
+    "saved": {
+      "file": "Hindustan Zinc Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 1078,
+      "kb": 536,
+      "url": "https://www.hzlindia.com/uploads/Website_upload_efe290bb10.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (1078 distinct names, 0 demat IDs, 1264 folio tokens): https://www.hzlindia.com/uploads/Website_upload_efe290bb10.pdf"
+    ]
+  },
+  {
+    "company": "Raymond Ltd",
+    "saved": {
+      "file": "Raymond Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 1174,
+      "kb": 530,
+      "url": "https://api.raymond.in/uploads/investor/1681296941278Shareholders%20Whose%20Shares%20Are%20Liable%20To%20Be%20Transferred%20To%20IEPF%20in%20FY%202022-23.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (1174 distinct names, 85 demat IDs, 1418 folio tokens): https://api.raymond.in/uploads/investor/1681296941278Shareholders%20Whose%20Shares%20Are%20Liable%20To%20Be%20Transferred%20To%20IEPF%20in%20FY%202022-23.pdf"
+    ]
+  },
+  {
+    "company": "Alkem Laboratories Ltd",
+    "saved": {
+      "file": "Alkem Laboratories Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 2707,
+      "kb": 322,
+      "url": "https://admin.alkemlabs.com/uploads/Interim_Dividend_FY_2017_2018_unpaid_data_f4f696d02a.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (2707 distinct names, 562 demat IDs, 1971 folio tokens): https://admin.alkemlabs.com/uploads/Interim_Dividend_FY_2017_2018_unpaid_data_f4f696d02a.pdf"
+    ]
+  },
+  {
+    "company": "National Aluminium Co Ltd",
+    "saved": {
+      "file": "National Aluminium Co Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 2601,
+      "kb": 1350,
+      "url": "https://nalcoindia.com/wp-content/uploads/2026/05/Shares-transferred_to_IEPF.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (2601 distinct names, 35 demat IDs, 3670 folio tokens): https://nalcoindia.com/wp-content/uploads/2026/05/Shares-transferred_to_IEPF.pdf"
+    ]
+  },
+  {
+    "company": "Ipca Laboratories Ltd",
+    "saved": {
+      "file": "Ipca Laboratories Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 1555,
+      "kb": 165,
+      "url": "https://www.ipca.com/wp-content/pdf/financials/shareholders-for-iepf-suspense-ac/list-of-shareholders-for-IEPF-suspense-ac-dec-2021.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (1555 distinct names, 93 demat IDs, 2250 folio tokens): https://www.ipca.com/wp-content/pdf/financials/shareholders-for-iepf-suspense-ac/list-of-shareholders-for-IEPF-suspense-ac-dec-2021.pdf"
+    ]
+  },
+  {
+    "company": "Aurobindo Pharma Ltd",
+    "saved": {
+      "file": "Aurobindo Pharma Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 6937,
+      "kb": 1049,
+      "url": "https://www.aurobindo.com/api/uploads/unpaiddividendaccountdetails/APLN_UNPAID%20DIVIDEND%20REGISTER%20FOR%20INTERIM%20DIV%202025-26%20AS%20ON%2025.11.2025.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (6937 distinct names, 0 demat IDs, 6087 folio tokens): https://www.aurobindo.com/api/uploads/unpaiddividendaccountdetails/APLN_UNPAID%20DIVIDEND%20REGISTER%20FOR%20INTERIM%20DIV%202025-26%20AS%20ON%2025.11.2025.pdf"
+    ]
+  },
+  {
+    "company": "Manappuram Finance Ltd",
+    "saved": {
+      "file": "Manappuram Finance Ltd - Unclaimed Assets.xls",
+      "ext": ".xls",
+      "records_est": 738,
+      "kb": 1110,
+      "url": "https://www.manappuram.com/sites/default/files/2025-05/Manappuram_1st_INT_2024-25_Unpaid_31032025.xls"
+    },
+    "detail": [
+      "OK [.xls] (738 distinct names, 92 demat IDs, 1130 folio tokens): https://www.manappuram.com/sites/default/files/2025-05/Manappuram_1st_INT_2024-25_Unpaid_31032025.xls"
+    ]
+  },
+  {
+    "company": "Lupin Ltd",
+    "saved": {
+      "file": "Lupin Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 1927,
+      "kb": 509,
+      "url": "https://www.lupin.com/unclaimed-dividend-and-shares/List%20of%20shareholders%20whose%20dividend%20remains%20unpaid%20for%20financial%20year%202024-2025.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (1927 distinct names, 1018 demat IDs, 3360 folio tokens): https://www.lupin.com/unclaimed-dividend-and-shares/List%20of%20shareholders%20whose%20dividend%20remains%20unpaid%20for%20financial%20year%202024-2025.pdf"
+    ]
+  },
+  {
+    "company": "Timken India Ltd",
+    "saved": {
+      "file": "Timken India Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 1864,
+      "kb": 426,
+      "url": "https://www.timken.com/wp-content/uploads/2026/01/List-of-Unpaid-Dividend-FY-2024-25.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (1864 distinct names, 0 demat IDs, 26 folio tokens): https://www.timken.com/wp-content/uploads/2026/01/List-of-Unpaid-Dividend-FY-2024-25.pdf"
+    ]
+  },
+  {
+    "company": "MOIL Ltd",
+    "saved": {
+      "file": "MOIL Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 7167,
+      "kb": 3712,
+      "url": "https://backend.moil.nic.in/getFiles/public/document/6a314302a0-Statement_of_Unpaid_Unclaimed_2_Interim_Dividend_2025-26_as_on_08.03.2026.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (7167 distinct names, 1833 demat IDs, 5944 folio tokens): https://backend.moil.nic.in/getFiles/public/document/6a314302a0-Statement_of_Unpaid_Unclaimed_2_Interim_Dividend_2025-26_as_on_08.03.2026.pdf"
+    ]
+  },
+  {
+    "company": "NMDC Ltd",
+    "saved": {
+      "file": "NMDC Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 1163,
+      "kb": 3771,
+      "url": "https://www.nmdc.co.in/cms-admin/Upload/Dividends_Document/10658c863ffc41c6b2d751b872b62fa4_20260704170622109.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (1163 distinct names, 0 demat IDs, 1391 folio tokens): https://www.nmdc.co.in/cms-admin/Upload/Dividends_Document/10658c863ffc41c6b2d751b872b62fa4_20260704170622109.pdf"
+    ]
+  },
+  {
+    "company": "Kirloskar Brothers Ltd",
+    "saved": {
+      "file": "Kirloskar Brothers Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 5000,
+      "kb": 6620,
+      "url": "https://www.kirloskarpumps.com/wp-content/uploads/2025/12/List-of-unclaimed-dividend-31032025.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (5000 distinct names, 402 demat IDs, 4938 folio tokens): https://www.kirloskarpumps.com/wp-content/uploads/2025/12/List-of-unclaimed-dividend-31032025.pdf"
+    ]
+  },
+  {
+    "company": "Exide Industries Ltd",
+    "saved": {
+      "file": "Exide Industries Ltd - Unclaimed Assets.xlsx",
+      "ext": ".xlsx",
+      "records_est": 1586,
+      "kb": 1724,
+      "url": "https://docs.exideindustries.com/pdf/unclaimed-dividends/2022-23/2022-23-final.xls"
+    },
+    "detail": [
+      "OK [.xlsx] (1586 distinct names, 0 demat IDs, 1109 folio tokens): https://docs.exideindustries.com/pdf/unclaimed-dividends/2022-23/2022-23-final.xls"
+    ]
+  },
+  {
+    "company": "SKF India Ltd",
+    "saved": {
+      "file": "SKF India Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 4500,
+      "kb": 4673,
+      "url": "https://cdn.skfmediahub.skf.com/api/public/094ecab00f682cfe/pdf_preview_medium/094ecab00f682cfe_pdf_preview_medium.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (4500 distinct names, 0 demat IDs, 2379 folio tokens): https://cdn.skfmediahub.skf.com/api/public/094ecab00f682cfe/pdf_preview_medium/094ecab00f682cfe_pdf_preview_medium.pdf"
+    ]
+  },
+  {
+    "company": "Kalpataru Projects International Ltd",
+    "saved": {
+      "file": "Kalpataru Projects International Ltd - Unclaimed Assets.xls",
+      "ext": ".xls",
+      "records_est": 1138,
+      "kb": 5653,
+      "url": "https://kalpataruprojects.com/api/view-file/Form_IEPF-2-Final-23.xls"
+    },
+    "detail": [
+      "OK [.xls] (1138 distinct names, 0 demat IDs, 756 folio tokens): https://kalpataruprojects.com/api/view-file/Form_IEPF-2-Final-23.xls"
+    ]
+  },
+  {
+    "company": "KEC International Ltd",
+    "saved": {
+      "file": "KEC International Ltd - Unclaimed Assets.xlsx",
+      "ext": ".xlsx",
+      "records_est": 1314,
+      "kb": 2236,
+      "url": "https://www.kecrpg.com/media/investorEducationMedia/Unpaid%20Dividend%202023-24.xlsx"
+    },
+    "detail": [
+      "OK [.xlsx] (1314 distinct names, 0 demat IDs, 546 folio tokens): https://www.kecrpg.com/media/investorEducationMedia/Unpaid%20Dividend%202023-24.xlsx"
+    ]
+  },
+  {
+    "company": "Vedanta Ltd",
+    "saved": {
+      "file": "Vedanta Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 2418,
+      "kb": 4126,
+      "url": "https://www.vedantaresources.com/uploads/shareholder-information/unclaimed_dividend/Vedanta-1st-Interim-Dividend-2023-24-unpaid-list.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (2418 distinct names, 0 demat IDs, 2873 folio tokens): https://www.vedantaresources.com/uploads/shareholder-information/unclaimed_dividend/Vedanta-1st-Interim-Dividend-2023-24-unpaid-list.pdf"
+    ]
+  },
+  {
+    "company": "NCC Ltd",
+    "saved": {
+      "file": "NCC Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 2081,
+      "kb": 3249,
+      "url": "https://ncclimited.com/unpaid-dividend/NCCL_V3_IEPF-2_2026_F.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (1228 distinct names, 0 demat IDs, 4162 folio tokens): https://ncclimited.com/unpaid-dividend/NCCL_V3_IEPF-2_2026_F.pdf"
+    ]
+  },
+  {
+    "company": "Arvind Ltd",
+    "saved": {
+      "file": "Arvind Ltd - Unclaimed Assets.xlsx",
+      "ext": ".xlsx",
+      "records_est": 1459,
+      "kb": 3352,
+      "url": "https://www.arvind.com/sites/default/files/shareholders_corner/Arvind%20Ltd_IEPF-2_Div-2022-2023.xlsm"
+    },
+    "detail": [
+      "OK [.xlsx] (1459 distinct names, 0 demat IDs, 825 folio tokens): https://www.arvind.com/sites/default/files/shareholders_corner/Arvind%20Ltd_IEPF-2_Div-2022-2023.xlsm"
+    ]
+  },
+  {
+    "company": "Amara Raja Energy and Mobility Ltd",
+    "saved": {
+      "file": "Amara Raja Energy and Mobility Ltd - Unclaimed Assets.xlsx",
+      "ext": ".xlsx",
+      "records_est": 377,
+      "kb": 1909,
+      "url": "https://www.amararajaeandm.com/Files/Unclaimed%20Dividend%20Sheet%20as%20on%20March%2031,%202026.xlsx"
+    },
+    "detail": [
+      "OK [.xlsx] (339 distinct names, 0 demat IDs, 754 folio tokens): https://www.amararajaeandm.com/Files/Unclaimed%20Dividend%20Sheet%20as%20on%20March%2031,%202026.xlsx"
+    ]
+  },
+  {
+    "company": "Century Textiles and Industries Ltd",
+    "saved": {
+      "file": "Century Textiles and Industries Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 10179,
+      "kb": 15221,
+      "url": "https://www.adityabirlarealestate.com/abrelcms/uploads/stateofunclaimedorunpaiddividend/stateofunclaimedorunpaiddividend_1758279505.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (10179 distinct names, 0 demat IDs, 6545 folio tokens): https://www.adityabirlarealestate.com/abrelcms/uploads/stateofunclaimedorunpaiddividend/stateofunclaimedorunpaiddividend_1758279505.pdf"
+    ]
+  },
+  {
+    "company": "EIH Ltd",
+    "saved": {
+      "file": "EIH Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 2902,
+      "kb": 90516,
+      "url": "https://www.eihltd.com/-/media/eihltd/pdf-files/unclaimed-divident/unclaimed-dividend-all1.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (2902 distinct names, 0 demat IDs, 2500 folio tokens): https://www.eihltd.com/-/media/eihltd/pdf-files/unclaimed-divident/unclaimed-dividend-all1.pdf"
+    ]
+  },
+  {
+    "company": "Zydus Lifesciences Ltd",
+    "saved": {
+      "file": "Zydus Lifesciences Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 2738,
+      "kb": 10481,
+      "url": "https://www.zyduslife.com/investor/admin/uploads/18/99/Statement-of-Unclaimed-Dividend-account-March-31--2023.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (2738 distinct names, 0 demat IDs, 2417 folio tokens): https://www.zyduslife.com/investor/admin/uploads/18/99/Statement-of-Unclaimed-Dividend-account-March-31--2023.pdf"
+    ]
+  },
+  {
+    "company": "UNO Minda Ltd",
+    "saved": {
+      "file": "UNO Minda Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 1563,
+      "kb": 522,
+      "url": "http://web.archive.org/web/20201022114926id_/https://www.unominda.com/images/Corporate_governance/Corporate_Governance_Policies/Yearwise-unclaimed-dividend-details-as-at-30-09-2015.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (1563 distinct names, 751 demat IDs, 2139 folio tokens): http://web.archive.org/web/20201022114926id_/https://www.unominda.com/images/Corporate_governance/Corporate_Governance_Policies/Yearwise-unclaimed-dividend-details-as-at-30-09-2015.pdf"
+    ]
+  }
+]
