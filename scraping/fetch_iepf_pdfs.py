@@ -25,6 +25,10 @@ from pathlib import Path
 from urllib.parse import urlparse, unquote
 
 from scrapling.fetchers import Fetcher
+from curl_cffi import requests as cffi_requests
+
+import warnings
+warnings.filterwarnings("ignore", message=".*[Vv]erif.*")
 
 try:
     from pypdf import PdfReader
@@ -151,6 +155,19 @@ def fetch(url: str) -> bytes | None:
                     body = body.encode("latin-1", "ignore")
                 if len(body) > 200:
                     return body
+        except Exception:
+            continue
+    # Several issuer sites (SAIL, BEL, Petronet, Whirlpool) serve an INCOMPLETE
+    # certificate chain — the leaf is fine but the intermediate is missing, so
+    # strict verification fails even though the host is genuine. Retry without
+    # verification. Safe here: these are public disclosure documents, we send no
+    # credentials, and every file is content-verified below before it is kept.
+    for imp in ("chrome", "firefox"):
+        try:
+            r = cffi_requests.get(url, impersonate=imp, timeout=120, verify=False)
+            if r.status_code == 200 and len(r.content) > 200:
+                print("     (fetched with TLS verification disabled — incomplete chain)")
+                return r.content
         except Exception:
             continue
     return None

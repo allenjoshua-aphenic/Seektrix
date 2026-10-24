@@ -1,0 +1,80 @@
+[
+  {
+    "company": "Bajaj Finserv Ltd",
+    "saved": {
+      "file": "Bajaj Finserv Ltd - Unclaimed Assets.xlsx",
+      "ext": ".xlsx",
+      "records_est": 142,
+      "kb": 757,
+      "url": "https://www.aboutbajajfinserv.com/content/dam/bajajfinserv/web/in/en/global/document/corporate/investor-relations/sebi/unclaimed-dividend-with-address-922020031010466.xlsx"
+    },
+    "detail": [
+      "OK [.xlsx] (142 distinct names, 0 demat IDs, 184 folio tokens): https://www.aboutbajajfinserv.com/content/dam/bajajfinserv/web/in/en/global/document/corporate/investor-relations/sebi/unclaimed-dividend-with-address-922020031010466.xlsx"
+    ]
+  },
+  {
+    "company": "Tech Mahindra Ltd",
+    "saved": {
+      "file": "Tech Mahindra Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 1421,
+      "kb": 2058,
+      "url": "https://insights.techmahindra.com/investors/iepf-unclaimed-dividend-and-corresponding-shares-data-fy-2015-16.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (1421 distinct names, 942 demat IDs, 1669 folio tokens): https://insights.techmahindra.com/investors/iepf-unclaimed-dividend-and-corresponding-shares-data-fy-2015-16.pdf"
+    ]
+  },
+  {
+    "company": "NTPC Ltd",
+    "saved": {
+      "file": "NTPC Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 1733,
+      "kb": 533,
+      "url": "https://ntpc.co.in/sites/default/files/inline-files/SHARES%20LIABLE%20TO%20BE%20TRANSFERRED%20TO%20IEPF%20IN%20NOVEMBER%202025.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (1733 distinct names, 0 demat IDs, 750 folio tokens): https://ntpc.co.in/sites/default/files/inline-files/SHARES%20LIABLE%20TO%20BE%20TRANSFERRED%20TO%20IEPF%20IN%20NOVEMBER%202025.pdf"
+    ]
+  },
+  {
+    "company": "Oil and Natural Gas Corp Ltd",
+    "saved": {
+      "file": "Oil and Natural Gas Corp Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 2127,
+      "kb": 13054,
+      "url": "https://ongcindia.com/documents/77751/2660534/18Unpaid_Dividend2024-25.pdf/2d0a472a-1df5-c58e-abda-df8d8790ff6e"
+    },
+    "detail": [
+      "OK [.pdf] (2127 distinct names, 1550 demat IDs, 3035 folio tokens): https://ongcindia.com/documents/77751/2660534/18Unpaid_Dividend2024-25.pdf/2d0a472a-1df5-c58e-abda-df8d8790ff6e"
+    ]
+  },
+  {
+    "company": "Power Grid Corp of India Ltd",
+    "saved": {
+      "file": "Power Grid Corp of India Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 2399,
+      "kb": 302,
+      "url": "https://www.powergrid.in/sites/default/files/Shareholders_Document/SharestransferredtoIEPFinMay2026.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (2399 distinct names, 0 demat IDs, 3044 folio tokens): https://www.powergrid.in/sites/default/files/Shareholders_Document/SharestransferredtoIEPFinMay2026.pdf"
+    ]
+  },
+  {
+    "company": "Hindalco Industries Ltd",
+    "saved": {
+      "file": "Hindalco Industries Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 7682,
+      "kb": 4177,
+      "url": "https://web.archive.org/web/20240325072529id_/https://www.hindalco.com/upload/pdf/unclaimed-dividend_2013-14_AGM16092015.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (7682 distinct names, 0 demat IDs, 2803 folio tokens): https://web.archive.org/web/20240325072529id_/https://www.hindalco.com/upload/pdf/unclaimed-dividend_2013-14_AGM16092015.pdf"
+    ]
+  }
+]

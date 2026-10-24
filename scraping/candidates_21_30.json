@@ -1,0 +1,38 @@
+[
+  {
+    "company": "Bajaj Finserv Ltd",
+    "candidates": [
+      "https://www.aboutbajajfinserv.com/content/dam/bajajfinserv/web/in/en/global/document/corporate/investor-relations/sebi/unclaimed-dividend-with-address-922020031010466.xlsx"
+    ]
+  },
+  {
+    "company": "Tech Mahindra Ltd",
+    "candidates": [
+      "https://insights.techmahindra.com/investors/iepf-unclaimed-dividend-and-corresponding-shares-data-fy-2015-16.pdf"
+    ]
+  },
+  {
+    "company": "NTPC Ltd",
+    "candidates": [
+      "https://ntpc.co.in/sites/default/files/inline-files/SHARES%20LIABLE%20TO%20BE%20TRANSFERRED%20TO%20IEPF%20IN%20NOVEMBER%202025.pdf"
+    ]
+  },
+  {
+    "company": "Oil and Natural Gas Corp Ltd",
+    "candidates": [
+      "https://ongcindia.com/documents/77751/2660534/18Unpaid_Dividend2024-25.pdf/2d0a472a-1df5-c58e-abda-df8d8790ff6e"
+    ]
+  },
+  {
+    "company": "Power Grid Corp of India Ltd",
+    "candidates": [
+      "https://www.powergrid.in/sites/default/files/Shareholders_Document/SharestransferredtoIEPFinMay2026.pdf"
+    ]
+  },
+  {
+    "company": "Hindalco Industries Ltd",
+    "candidates": [
+      "https://web.archive.org/web/20240325072529id_/https://www.hindalco.com/upload/pdf/unclaimed-dividend_2013-14_AGM16092015.pdf"
+    ]
+  }
+]

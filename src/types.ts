@@ -48,11 +48,108 @@ export interface SearchQuery {
   estimatedCompletionMinutes: number;
   logs: PipelineLog[];
   matchedCount: number;
-  confidenceScore: number; // 0-100
+  confidenceScore: number; // 0-100 — score of the best match
   totalMatchedValue: number; // in INR
   companyCode?: string;
   isStarred?: boolean;
   isArchived?: boolean;
+  /** 'typed' = user entered the name; 'email' = the server read it from the email address. */
+  nameSource?: 'typed' | 'email';
+  /** Which database search function served this job ('v2' | 'v1-fallback' | 'none'). */
+  engine?: string;
+  /** True when a stage timed out or the server ran on the legacy function. */
+  degraded?: boolean;
+  degradedReason?: string;
+}
+
+// ── Search results (from GET /api/search/:id/matches) ───────────────────────
+export type MatchLabel = 'strong' | 'likely' | 'possible' | 'weak';
+
+export interface MatchResult {
+  id: string;
+  companyName: string;
+  bseCode: string;
+  holderName: string;
+  matchedSimilarityScore: number; // 0-100
+  matchLabel: MatchLabel;
+  matchReasons: string[];
+  folioNumber: string;
+  dpClientId: string;
+  unclaimedAmount: number;
+  municipalRegion: string;
+  disclosureSource: string;
+  fatherName: string;
+  shares: number;
+  state: string;
+  fullAddress: string;
+  financialYear: string;
+  stateMatch: boolean | null;
+}
+
+export interface SearchStageInfo {
+  name: string;
+  mode: 'word' | 'similar' | 'prefix' | 'v1';
+  threshold: number | null;
+  state: string;
+  rows: number;
+  ms: number;
+  error?: string;
+}
+
+export interface SearchMeta {
+  normalizedQuery: string;
+  tokens: string[];
+  removed: string[];
+  stages: SearchStageInfo[];
+  engine: 'v2' | 'v1-fallback' | 'none';
+  degraded: boolean;
+  /** Plain-language sentence for end users. */
+  degradedReason?: string;
+  /** Technical detail (shown behind a "technical details" toggle). */
+  degradedDetail?: string;
+  totalCandidates: number;
+  tookMs: number;
+  fromCache: boolean;
+}
+
+export interface MatchesReady {
+  status: 'ready';
+  id: string;
+  query: { fullName: string; city: string; state: string };
+  matches: MatchResult[];
+  meta: SearchMeta;
+}
+
+export interface MatchesRunning {
+  status: 'running';
+  progressPercent: number;
+  step: PipelineStep;
+}
+
+export type MatchesResponse = MatchesReady | MatchesRunning;
+
+// ── Type-ahead suggestions (from GET /api/suggest) ──────────────────────────
+export interface SuggestItem {
+  holderName: string;
+  companyName: string;
+  state: string;
+  score: number;
+  label: MatchLabel;
+}
+
+export interface SuggestResponse {
+  query: string;
+  state: string;
+  total: number;
+  items: SuggestItem[];
+  meta: {
+    normalizedQuery: string;
+    tookMs: number;
+    engine: string;
+    degraded: boolean;
+    degradedReason?: string;
+    fromCache: boolean;
+  };
 }
 
 export type AssetCategory =
@@ -111,5 +208,3 @@ export interface AppPayment {
   timestamp: string;
   description: string;
 }
-
-

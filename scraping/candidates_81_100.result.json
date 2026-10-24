@@ -1,0 +1,236 @@
+[
+  {
+    "company": "Life Insurance Corp of India",
+    "saved": {
+      "file": "Life Insurance Corp of India - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 10507,
+      "kb": 6160,
+      "url": "https://licindia.in/documents/d/guest/unclaimed-final-dividend-register-for-fy-2021-22-as-on-june-30-2026"
+    },
+    "detail": [
+      "OK [.pdf] (10507 distinct names, 1365 demat IDs, 11292 folio tokens): https://licindia.in/documents/d/guest/unclaimed-final-dividend-register-for-fy-2021-22-as-on-june-30-2026"
+    ]
+  },
+  {
+    "company": "Hindustan Petroleum Corp Ltd",
+    "saved": {
+      "file": "Hindustan Petroleum Corp Ltd - Unclaimed Assets.xlsx",
+      "ext": ".xlsx",
+      "records_est": 1598,
+      "kb": 4503,
+      "url": "https://www.hindustanpetroleum.com/documents/pdf/Unclaimed-Dividend-FY2018-19-Final-FY2025-26-Interim.xlsx"
+    },
+    "detail": [
+      "OK [.xlsx] (1598 distinct names, 736 demat IDs, 1780 folio tokens): https://www.hindustanpetroleum.com/documents/pdf/Unclaimed-Dividend-FY2018-19-Final-FY2025-26-Interim.xlsx"
+    ]
+  },
+  {
+    "company": "General Insurance Corp of India",
+    "saved": {
+      "file": "General Insurance Corp of India - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 4720,
+      "kb": 10659,
+      "url": "https://www.gicre.in/images/2026/Details_of_Unclaimed_or_Unpaid_Dividend_as_on_31st_March_2025.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (4720 distinct names, 0 demat IDs, 1724 folio tokens): https://www.gicre.in/images/2026/Details_of_Unclaimed_or_Unpaid_Dividend_as_on_31st_March_2025.pdf"
+    ]
+  },
+  {
+    "company": "Cholamandalam Investment and Finance Co Ltd",
+    "saved": {
+      "file": "Cholamandalam Investment and Finance Co Ltd - Unclaimed Assets.xls",
+      "ext": ".xls",
+      "records_est": 1146,
+      "kb": 8314,
+      "url": "https://files.cholamandalam.com/files/CHF_IEPF2_31032023.xls"
+    },
+    "detail": [
+      "OK [.xls] (1146 distinct names, 0 demat IDs, 561 folio tokens): https://files.cholamandalam.com/files/CHF_IEPF2_31032023.xls"
+    ]
+  },
+  {
+    "company": "Castrol India Ltd",
+    "saved": {
+      "file": "Castrol India Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 2703,
+      "kb": 18232,
+      "url": "https://www.castrol.com/content/dam/castrol/country-sites-new/en_in/india/home/documents/investors/iepf-2.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (2703 distinct names, 0 demat IDs, 1890 folio tokens): https://www.castrol.com/content/dam/castrol/country-sites-new/en_in/india/home/documents/investors/iepf-2.pdf"
+    ]
+  },
+  {
+    "company": "Gujarat Fluorochemicals Ltd",
+    "saved": {
+      "file": "Gujarat Fluorochemicals Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 245,
+      "kb": 223,
+      "url": "https://gfl.co.in/assets/pdf/Sub%20Tab%203%20-%20List%20of%20Shareholders%20whose%20shares%20have%20been%20transferred%20to%20IEPF%20-%20Demerger.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (245 distinct names, 0 demat IDs, 294 folio tokens): https://gfl.co.in/assets/pdf/Sub%20Tab%203%20-%20List%20of%20Shareholders%20whose%20shares%20have%20been%20transferred%20to%20IEPF%20-%20Demerger.pdf"
+    ]
+  },
+  {
+    "company": "Coromandel International Ltd",
+    "saved": {
+      "file": "Coromandel International Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 1763,
+      "kb": 660,
+      "url": "https://www.coromandel.biz/wp-content/uploads/2026/01/Unpaid-Dividend-2023-24-Final.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (1763 distinct names, 0 demat IDs, 2721 folio tokens): https://www.coromandel.biz/wp-content/uploads/2026/01/Unpaid-Dividend-2023-24-Final.pdf"
+    ]
+  },
+  {
+    "company": "Muthoot Finance Ltd",
+    "saved": {
+      "file": "Muthoot Finance Ltd - Unclaimed Assets.xlsx",
+      "ext": ".xlsx",
+      "records_est": 1307,
+      "kb": 2982,
+      "url": "https://cdn.muthootfinance.com/sites/default/files/files/2026-03/Muthoot-Dividend-2025.xlsm"
+    },
+    "detail": [
+      "OK [.xlsx] (1307 distinct names, 0 demat IDs, 1117 folio tokens): https://cdn.muthootfinance.com/sites/default/files/files/2026-03/Muthoot-Dividend-2025.xlsm"
+    ]
+  },
+  {
+    "company": "Petronet LNG Ltd",
+    "saved": {
+      "file": "Petronet LNG Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 2086,
+      "kb": 10603,
+      "url": "https://www.petronetlng.in/documents/d/pertonetlng/unpaid-dividend-as-on-31032026"
+    },
+    "detail": [
+      "OK [.pdf] (2086 distinct names, 1953 demat IDs, 3079 folio tokens): https://www.petronetlng.in/documents/d/pertonetlng/unpaid-dividend-as-on-31032026"
+    ]
+  },
+  {
+    "company": "UPL Ltd",
+    "saved": {
+      "file": "UPL Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 1162,
+      "kb": 1205,
+      "url": "https://www.upl-ltd.com/downloads/policies/compliances/Details_of_Equity_Shares_transferred_to_IEPF.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (1162 distinct names, 0 demat IDs, 989 folio tokens): https://www.upl-ltd.com/downloads/policies/compliances/Details_of_Equity_Shares_transferred_to_IEPF.pdf"
+    ]
+  },
+  {
+    "company": "Chambal Fertilisers and Chemicals Ltd",
+    "saved": {
+      "file": "Chambal Fertilisers and Chemicals Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 724,
+      "kb": 894,
+      "url": "https://investor.cfcl.in/list-of-shareholders.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (692 distinct names, 68 demat IDs, 1448 folio tokens): https://investor.cfcl.in/list-of-shareholders.pdf"
+    ]
+  },
+  {
+    "company": "GAIL India Ltd",
+    "saved": {
+      "file": "GAIL India Ltd - Unclaimed Assets.xls",
+      "ext": ".xls",
+      "records_est": 1018,
+      "kb": 20719,
+      "url": "https://gailebank.gail.co.in/InvestorsZone/GAIL_IEPF2_2016-17int%20to%202019-20int.xls"
+    },
+    "detail": [
+      "OK [.xls] (1018 distinct names, 0 demat IDs, 552 folio tokens): https://gailebank.gail.co.in/InvestorsZone/GAIL_IEPF2_2016-17int%20to%202019-20int.xls"
+    ]
+  },
+  {
+    "company": "Berger Paints India Ltd",
+    "saved": {
+      "file": "Berger Paints India Ltd - Unclaimed Assets.xlsx",
+      "ext": ".xlsx",
+      "records_est": 157,
+      "kb": 17,
+      "url": "https://berger-dev-s3-bucket.s3.ap-south-1.amazonaws.com/2024-05/BPLN_COMMON_UNPAID%20DIVIDEND%20%20FOLIOS_BASE%20YEAR%202016-17%20.xlsx"
+    },
+    "detail": [
+      "OK [.xlsx] (157 distinct names, 9 demat IDs, 241 folio tokens): https://berger-dev-s3-bucket.s3.ap-south-1.amazonaws.com/2024-05/BPLN_COMMON_UNPAID%20DIVIDEND%20%20FOLIOS_BASE%20YEAR%202016-17%20.xlsx"
+    ]
+  },
+  {
+    "company": "Kansai Nerolac Paints Ltd",
+    "saved": {
+      "file": "Kansai Nerolac Paints Ltd - Unclaimed Assets.xlsx",
+      "ext": ".xlsx",
+      "records_est": 1284,
+      "kb": 518,
+      "url": "https://www.nerolac.com/sites/default/files/2024-09/FY_2024-25.xlsm"
+    },
+    "detail": [
+      "OK [.xlsx] (1284 distinct names, 0 demat IDs, 792 folio tokens): https://www.nerolac.com/sites/default/files/2024-09/FY_2024-25.xlsm"
+    ]
+  },
+  {
+    "company": "Akzo Nobel India Ltd",
+    "saved": {
+      "file": "Akzo Nobel India Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 3434,
+      "kb": 951,
+      "url": "https://www.jswdulux.com/pdf/IEPF/IEPF-4%20Statement%20of%20shares%20transferred%20to%20IEPF%202017.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (3434 distinct names, 0 demat IDs, 2487 folio tokens): https://www.jswdulux.com/pdf/IEPF/IEPF-4%20Statement%20of%20shares%20transferred%20to%20IEPF%202017.pdf"
+    ]
+  },
+  {
+    "company": "Whirlpool of India Ltd",
+    "saved": {
+      "file": "Whirlpool of India Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 989,
+      "kb": 15592,
+      "url": "https://corporate.whirlpool.in/wp-content/uploads/2024/07/IEPF-2-Statement.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (989 distinct names, 0 demat IDs, 1016 folio tokens): https://corporate.whirlpool.in/wp-content/uploads/2024/07/IEPF-2-Statement.pdf"
+    ]
+  },
+  {
+    "company": "New India Assurance Co Ltd",
+    "saved": {
+      "file": "New India Assurance Co Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 1761,
+      "kb": 2618,
+      "url": "https://www.newindia.co.in/cms/012d3094-6c06-47ca-80fa-12460b4d9e75/IEPF%202.pdf?guest=true"
+    },
+    "detail": [
+      "OK [.pdf] (1761 distinct names, 0 demat IDs, 1755 folio tokens): https://www.newindia.co.in/cms/012d3094-6c06-47ca-80fa-12460b4d9e75/IEPF%202.pdf?guest=true"
+    ]
+  },
+  {
+    "company": "LIC Housing Finance Ltd",
+    "saved": {
+      "file": "LIC Housing Finance Ltd - Unclaimed Assets.pdf",
+      "ext": ".pdf",
+      "records_est": 1853,
+      "kb": 7841,
+      "url": "https://cdn.lichousing.com/2026/01/Details-of-Unpaid-dividend-as-on-31-March-2025.pdf"
+    },
+    "detail": [
+      "OK [.pdf] (1695 distinct names, 0 demat IDs, 3706 folio tokens): https://cdn.lichousing.com/2026/01/Details-of-Unpaid-dividend-as-on-31-March-2025.pdf"
+    ]
+  }
+]

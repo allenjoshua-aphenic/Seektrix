@@ -258,6 +258,12 @@ For the next company: `python scripts/convert_iepf_pdf.py <list.pdf> <out.csv> -
 
 ## 7. Honest Status: What Is Still NOT Production-Grade
 
+> **2026-10-17 update — search engine rewrite.** Measured live: the v1 `search_holders` function (pg_trgm `%` at threshold 0.3) hit Supabase's 8 s statement timeout for most real names on 13.7 lakh rows, and `server.ts` silently fell back to an unranked `ILIKE` scan. The GIN trigram index exists and works; the fix needed **no new index and no storage**. What changed:
+> - `database/search_holders_v2.sql` — new SQL function (word-match + typo-match modes, per-call threshold, state filter, initials regex). **Must be pasted into the Supabase SQL Editor once**; until then the server runs v1 and marks every result *degraded*.
+> - `server/search/` — staged engine, Node re-ranking with reasons, 7.5 s abort budget per DB call, result cache (the dashboard no longer re-runs the search), rate limits, input validation, honest progress logs.
+> - Client: debounced + cancellable type-ahead (`/api/suggest`), AbortController on every fetch, progress screen driven by real server stages, match score + reasons on the results table, state passed through to the API.
+> - Verified on a local Postgres 17 with 400k synthetic names (all stages 4–170 ms, index used) and against the live project on the fallback path. `scripts/search_engine_selftest.ts` and `scripts/engine_local_e2e.ts` reproduce the checks.
+
 Fixed this session: **results integrity** (the make-or-break item). Still open, in priority order:
 
 1. **Payments are simulated.** The ₹49/₹99 checkout is a timer; card/UPI inputs go nowhere; unlocks are localStorage flags and the "locked" data is only CSS-blurred (readable via devtools). Before charging a single rupee: integrate Razorpay (or similar) with server-side verification, and stop sending locked fields to the browser at all.
